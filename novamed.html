@@ -1,49 +1,59 @@
 <!DOCTYPE HTML>
 <html>
-  <style>
-.slider {
+<style>
+/* Slider container */
+#novamed-slider {
   position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 3rem;
 }
 
-.slides {
+/* Slides */
+#novamed-slider .slides {
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  will-change: transform;
 }
 
-.slide {
+#novamed-slider .slide {
   min-width: 100%;
 }
 
-.slide img {
+#novamed-slider img {
   width: 100%;
+  display: block;
   border-radius: 6px;
 }
 
-/* Navigation arrows */
-.slider .nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-size: 22px;
-  border-radius: 50%;
+/* Dots */
+#novamed-slider .dots {
+  text-align: center;
+  margin-top: 12px;
 }
 
-.slider .prev { left: 15px; }
-.slider .next { right: 15px; }
+#novamed-slider .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-.slider .nav:hover {
-  background: rgba(0,0,0,0.75);
+#novamed-slider .dot.active {
+  background-color: #2e7df6;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  #novamed-slider .slides {
+    transition: none;
+  }
 }
 </style>
-
   <head>
     <title>NovaMed Solutions | Case Study</title>
     <meta charset="utf-8" />
@@ -51,19 +61,77 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
-  <script>
-let currentSlide = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
+ <script>
+window.addEventListener("load", () => {
+  const slider = document.getElementById("novamed-slider");
+  const slides = slider.querySelector(".slides");
+  const dots = slider.querySelectorAll(".dot");
+  const totalSlides = dots.length;
 
-document.querySelector('.next').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-});
+  let index = 0;
+  let startX = 0;
+  let isDragging = false;
 
-document.querySelector('.prev').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  function updateSlider() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  // Auto slide
+  let autoSlide = setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  }, 4500);
+
+  // Dot click
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      index = parseInt(dot.dataset.index);
+      updateSlider();
+      resetAutoSlide();
+    });
+  });
+
+  // Touch / trackpad swipe
+  slides.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  slides.addEventListener("touchend", e => {
+    if (!isDragging) return;
+    let endX = e.changedTouches[0].clientX;
+    handleSwipe(endX);
+  });
+
+  slides.addEventListener("mousedown", e => {
+    startX = e.clientX;
+    isDragging = true;
+  });
+
+  slides.addEventListener("mouseup", e => {
+    if (!isDragging) return;
+    let endX = e.clientX;
+    handleSwipe(endX);
+  });
+
+  function handleSwipe(endX) {
+    const diff = startX - endX;
+    if (diff > 50) index = (index + 1) % totalSlides;
+    if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
+    updateSlider();
+    resetAutoSlide();
+    isDragging = false;
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    }, 4500);
+  }
 });
 </script>
   <body class="is-preload">
@@ -85,21 +153,21 @@ document.querySelector('.prev').addEventListener('click', () => {
             </p>
           </header>
 
-         <div class="slider">
+     <div class="slider" id="novamed-slider">
   <div class="slides">
-
-    <div class="slide active">
+    <div class="slide">
       <img src="images/novamed_dashboard.png" alt="NovaMed Sales Dashboard" />
     </div>
-
     <div class="slide">
-      <img src="images/Nova.png" alt="NovaMed Customer Analysis Dashboard" />
+      <img src="images/novamed_customer_analysis.png" alt="NovaMed Customer Analysis Dashboard" />
     </div>
-
   </div>
 
-  <button class="nav prev">&#10094;</button>
-  <button class="nav next">&#10095;</button>
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+  </div>
 </div>
 
           <h2>Project Overview</h2>
