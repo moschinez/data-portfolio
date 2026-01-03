@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -60,228 +59,260 @@
       font-size: 0.9rem;
       opacity: 0.7;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      #novamed-slider .slides { transition: none; }
+    }
   </style>
 </head>
 
 <body class="is-preload">
 
-<div id="wrapper">
+  <div id="wrapper" class="fade-in">
 
-  <!-- Header -->
-  <header id="header">
-    <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-  </header>
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+    </header>
 
-  <!-- Main -->
-  <div id="main">
-    <article class="post">
+    <!-- Nav (optional but nice) -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">Portfolio</a></li>
+        <li class="active"><a href="novamed.html">NovaMed Case Study</a></li>
+      </ul>
+    </nav>
 
-      <header class="major">
-        <span class="date">Power BI Case Study</span>
-        <h1>Sales Performance & Customer Insights Dashboard</h1>
+    <!-- Main -->
+    <div id="main">
+
+      <!-- ✅ YOUR EXACT ARTICLE STARTS HERE (UNCHANGED) -->
+      <article class="post">
+        <header class="major">
+          <span class="date">Power BI Case Study</span>
+          <h1>Sales Performance & Customer Insights Dashboard</h1>
+          <p>
+            <strong>Client:</strong> NovaMed Solutions &nbsp;|&nbsp;
+            <strong>Industry:</strong> Pharmaceutical Distribution &nbsp;|&nbsp;
+            <strong>Tool:</strong> Power BI
+          </p>
+        </header>
+
+        <!-- AUTO SLIDER (2 images) -->
+        <div class="slider" id="novamed-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="images/novamed_dashboard.png" alt="NovaMed Sales Dashboard" />
+            </div>
+            <div class="slide">
+              <img src="images/novamed_customer_analysis.png" alt="NovaMed Customer Analysis Dashboard" />
+            </div>
+          </div>
+
+          <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+          </div>
+
+          <p class="slider-hint">Tip: Swipe/trackpad left-right or click the dots to view the next dashboard.</p>
+        </div>
+
+        <hr />
+
+        <h2>Introduction</h2>
         <p>
-          <strong>Client:</strong> NovaMed Solutions &nbsp;|&nbsp;
-          <strong>Industry:</strong> Pharmaceutical Distribution &nbsp;|&nbsp;
-          <strong>Tool:</strong> Power BI
+          Today, I’ll be walking you through an interactive Power BI dashboard designed for NovaMed Solutions, a pharmaceutical distributor.
+          The goal of this dashboard is to provide clear visibility into <strong>sales performance, profitability, and customer behaviour</strong>, enabling data-driven decision-making.
         </p>
-      </header>
 
-      <!-- Auto Slider -->
-      <div class="slider" id="novamed-slider">
-        <div class="slides">
-          <div class="slide">
-            <img src="images/novamed_dashboard.png" alt="NovaMed Sales Dashboard" />
-          </div>
-          <div class="slide">
-            <img src="images/novamed_customer_analysis.png" alt="NovaMed Customer Analysis Dashboard" />
-          </div>
-        </div>
+        <hr />
 
-        <div class="dots">
-          <span class="dot active" data-index="0"></span>
-          <span class="dot" data-index="1"></span>
-        </div>
+        <h2>Dashboard 1: Top &amp; Bottom Sales Analysis</h2>
 
-        <p class="slider-hint">Swipe/trackpad or click dots to view the next dashboard</p>
-      </div>
+        <h3>Overall Sales Performance</h3>
+        <p>
+          Let’s start with the top-level KPIs. At the top of the dashboard, we can see key performance indicators including
+          <strong>Total Revenue, Total Profit, Cost of Goods Sold (COGS), Quantity Sold, and Profit Margin</strong>.
+        </p>
+        <p>
+          These KPIs provide an instant snapshot of business health and update dynamically based on filters such as date, drug, or customer.
+        </p>
 
-      <hr />
+        <h3>Month-over-Month Performance</h3>
+        <p>
+          This visual compares <strong>month-over-month revenue and profit</strong>. This allows stakeholders to quickly identify growth patterns,
+          seasonal trends, or performance drops that may require intervention.
+        </p>
 
-      <h2>Introduction</h2>
-      <p>
-        This Power BI solution was designed for NovaMed Solutions, a pharmaceutical distributor.
-        The dashboard provides visibility into <strong>sales performance, profitability, and customer behaviour</strong>
-        to support data-driven decision-making.
-      </p>
+        <h3>Top &amp; Bottom Performing Drugs</h3>
+        <p>
+          The dashboard includes a <strong>dynamic ranking of the Top 5 and Bottom 5 drugs</strong> based on revenue, profit, or sales volume.
+          Each ranking also shows <strong>percentage contribution</strong>, making it easy to identify which products drive the majority of sales
+          and which may be underperforming or affecting margins.
+        </p>
 
-      <hr />
+        <h3>Customer Performance Analysis</h3>
+        <p>
+          This section focuses on <strong>customer contribution</strong>. It highlights top-performing customers as well as those generating minimal revenue.
+          These insights support customer engagement improvements, contract review, and prioritisation of high-value accounts.
+        </p>
 
-      <h2>Dashboard 1: Top &amp; Bottom Sales Analysis</h2>
+        <h3>Interactivity</h3>
+        <p>
+          All visuals are fully interactive. By selecting a specific drug, customer, or time period using slicers, the entire dashboard updates in real time,
+          allowing users to drill down into performance drivers.
+        </p>
 
-      <h3>Overall Sales Performance</h3>
-      <p>
-        Key KPIs include <strong>Total Revenue, Total Profit, Cost of Goods Sold (COGS),
-        Quantity Sold, and Profit Margin</strong>, offering an instant snapshot of business performance.
-      </p>
+        <hr />
 
-      <h3>Month-over-Month Performance</h3>
-      <p>
-        Revenue and profit trends are compared month-over-month to identify growth patterns,
-        seasonality, and performance declines.
-      </p>
+        <h2>Dashboard 2: Customer Analysis</h2>
 
-      <h3>Top &amp; Bottom Performing Drugs</h3>
-      <p>
-        The dashboard dynamically ranks the <strong>Top 5 and Bottom 5 drugs</strong>
-        by revenue, profit, and sales volume, including contribution percentages.
-      </p>
+        <h3>Customer Demographics Overview</h3>
+        <p>
+          The Customer Analysis dashboard begins with <strong>customer demographics</strong>.
+          It breaks customers down by <strong>age group, gender, and buyer type</strong> to reveal who the core customers are.
+        </p>
 
-      <h3>Customer Performance Analysis</h3>
-      <p>
-        Customer contribution analysis highlights high-value customers
-        and identifies underperforming accounts.
-      </p>
+        <h3>Revenue per Customer Segment</h3>
+        <p>
+          This view analyses <strong>average revenue per customer segment</strong>, helping identify which groups
+          (for example, hospitals versus individual buyers) generate the highest value.
+        </p>
 
-      <h3>Interactivity</h3>
-      <p>
-        All visuals respond dynamically to slicers,
-        allowing users to drill down by time period, product, customer, and buyer type.
-      </p>
+        <h3>Revenue Distribution</h3>
+        <p>
+          This visual shows <strong>revenue distribution by buyer type and country</strong>, highlighting how different customer categories and regions contribute to sales.
+        </p>
 
-      <hr />
+        <h3>Purchasing Trends by Demographics</h3>
+        <p>
+          This section examines <strong>revenue trends by age and gender</strong>, supporting targeted marketing and product positioning.
+        </p>
 
-      <h2>Dashboard 2: Customer Analysis</h2>
+        <h3>Geographic Insights</h3>
+        <p>
+          The map highlights <strong>geographic revenue concentration</strong> and emphasises the top revenue-generating countries,
+          helping leadership identify key markets and potential expansion opportunities.
+        </p>
 
-      <h3>Customer Demographics</h3>
-      <p>
-        Customers are segmented by age group, gender, and buyer type
-        to better understand purchasing behaviour.
-      </p>
+        <hr />
 
-      <h3>Revenue per Customer Segment</h3>
-      <p>
-        Average revenue per customer segment reveals the most valuable customer groups.
-      </p>
+        <h2>Conclusion</h2>
+        <p>In summary, these dashboards provide NovaMed Solutions with:</p>
+        <ul>
+          <li>Clear visibility into sales and profitability</li>
+          <li>Identification of high- and low-performing drugs and customers</li>
+          <li>Deeper understanding of customer demographics and regional performance</li>
+        </ul>
+        <p>
+          Overall, the solution empowers stakeholders to make <strong>strategic, data-driven decisions</strong> to optimise sales, inventory, and customer engagement.
+        </p>
 
-      <h3>Revenue Distribution</h3>
-      <p>
-        Revenue is analysed by country and buyer type
-        to highlight key geographic markets.
-      </p>
+        <ul class="actions special">
+          <li><a href="NovaMed_Sales_Analysis_Presentation.pdf" class="button" target="_blank" rel="noopener">View PDF Version</a></li>
+          <li><a href="index.html#projects" class="button">Back to Projects</a></li>
+        </ul>
+      </article>
+      <!-- ✅ YOUR EXACT ARTICLE ENDS HERE -->
 
-      <h3>Geographic Insights</h3>
-      <p>
-        Map visuals highlight top revenue-generating countries
-        and support market expansion decisions.
-      </p>
+    </div>
 
-      <hr />
-
-      <h2>Conclusion</h2>
+    <!-- Copyright -->
+    <div id="copyright">
       <ul>
-        <li>Clear visibility into sales and profitability</li>
-        <li>Identification of high- and low-performing drugs and customers</li>
-        <li>Improved understanding of customer and regional trends</li>
+        <li>&copy; Oluwaseun Muyiwa</li>
+        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
       </ul>
+    </div>
 
-      <ul class="actions special">
-        <li><a href="NovaMed_Sales_Analysis_Presentation.pdf" class="button" target="_blank">View PDF Version</a></li>
-        <li><a href="index.html#projects" class="button">Back to Portfolio</a></li>
-      </ul>
-
-    </article>
   </div>
 
-  <!-- Footer -->
-  <div id="copyright">
-    <ul>
-      <li>&copy; Oluwaseun Muyiwa</li>
-      <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-    </ul>
-  </div>
+  <!-- Scripts (theme) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 
-</div>
+  <!-- Slider JS -->
+  <script>
+    window.addEventListener("load", () => {
+      const slider = document.getElementById("novamed-slider");
+      if (!slider) return;
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+      const slides = slider.querySelector(".slides");
+      const dots = slider.querySelectorAll(".dot");
+      const totalSlides = dots.length;
 
-<!-- Slider JS -->
-<script>
-window.addEventListener("load", () => {
-  const slider = document.getElementById("novamed-slider");
-  if (!slider) return;
+      let index = 0;
+      let startX = 0;
+      let isDragging = false;
 
-  const slides = slider.querySelector(".slides");
-  const dots = slider.querySelectorAll(".dot");
-  const totalSlides = dots.length;
+      function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(d => d.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
 
-  let index = 0;
-  let startX = 0;
-  let isDragging = false;
+      // Auto slide
+      let autoSlide = setInterval(() => {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+      }, 4500);
 
-  function updateSlider() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(d => d.classList.remove("active"));
-    dots[index].classList.add("active");
-  }
+      function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => {
+          index = (index + 1) % totalSlides;
+          updateSlider();
+        }, 4500);
+      }
 
-  let autoSlide = setInterval(() => {
-    index = (index + 1) % totalSlides;
-    updateSlider();
-  }, 4500);
+      // Click dots
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          index = parseInt(dot.dataset.index, 10);
+          updateSlider();
+          resetAutoSlide();
+        });
+      });
 
-  function resetAutoSlide() {
-    clearInterval(autoSlide);
-    autoSlide = setInterval(() => {
-      index = (index + 1) % totalSlides;
-      updateSlider();
-    }, 4500);
-  }
+      // Touch swipe
+      slides.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
 
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      index = parseInt(dot.dataset.index, 10);
-      updateSlider();
-      resetAutoSlide();
+      slides.addEventListener("touchend", e => {
+        if (!isDragging) return;
+        const endX = e.changedTouches[0].clientX;
+        handleSwipe(endX);
+      });
+
+      // Mouse drag
+      slides.addEventListener("mousedown", e => {
+        startX = e.clientX;
+        isDragging = true;
+      });
+
+      slides.addEventListener("mouseup", e => {
+        if (!isDragging) return;
+        const endX = e.clientX;
+        handleSwipe(endX);
+      });
+
+      function handleSwipe(endX) {
+        const diff = startX - endX;
+        if (diff > 50) index = (index + 1) % totalSlides;
+        else if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
+        updateSlider();
+        resetAutoSlide();
+        isDragging = false;
+      }
     });
-  });
-
-  slides.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-  });
-
-  slides.addEventListener("touchend", e => {
-    if (!isDragging) return;
-    const endX = e.changedTouches[0].clientX;
-    handleSwipe(endX);
-  });
-
-  slides.addEventListener("mousedown", e => {
-    startX = e.clientX;
-    isDragging = true;
-  });
-
-  slides.addEventListener("mouseup", e => {
-    if (!isDragging) return;
-    const endX = e.clientX;
-    handleSwipe(endX);
-  });
-
-  function handleSwipe(endX) {
-    const diff = startX - endX;
-    if (diff > 50) index = (index + 1) % totalSlides;
-    else if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
-    updateSlider();
-    resetAutoSlide();
-    isDragging = false;
-  }
-});
-</script>
+  </script>
 
 </body>
 </html>
