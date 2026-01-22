@@ -4695,3 +4695,8 @@ input, select, textarea {
 .social-center .icons {
   justify-content: center;
 }
+
+.project-image {
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+}
