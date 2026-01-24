@@ -4696,8 +4696,12 @@ input, select, textarea {
   justify-content: center;
 }
 
-p.compact {
-  margin-top: 0.3em;
+header p {
+  margin-bottom: 0.5rem;
+}
+
+header .project-desc {
+  margin-top: 0;
 }
 
 
