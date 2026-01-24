@@ -4,6 +4,13 @@ This is my professional data analytics portfolio website, built to showcase my s
 
 
 
+## 🛠️ Skills & Tools
+- **Data Analysis:** Excel, SQL
+- **Data Visualisation:** Power BI, Tableau
+- **Database Management:** PostgreSQL
+- **Other:** Data Cleaning, Data Governance, Data Storytelling
+
+
 ## 📬 Contact
 
 - **Email:** [Muyiwa931@gmail.com](mailto:Muyiwa931@gmail.com)
