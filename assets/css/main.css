@@ -4696,5 +4696,9 @@ input, select, textarea {
   justify-content: center;
 }
 
+p.compact {
+  margin-top: 0.3em;
+}
+
 
 
