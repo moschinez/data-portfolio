@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Deskify Office Supplies | Tableau Case Study</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <!-- Slider CSS -->
+  <style>
+    #deskify-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+    #deskify-slider .slides {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+      will-change: transform;
+    }
+    #deskify-slider .slide {
+      min-width: 100%;
+    }
+    #deskify-slider img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    #deskify-slider .dots {
+      text-align: center;
+      margin-top: 12px;
+    }
+    #deskify-slider .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+    #deskify-slider .dot.active {
+      background-color: #2e7df6;
+    }
+    #deskify-slider .slider-hint {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+<div id="wrapper" class="fade-in">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+  </header>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="tableauprojects.html">Projects</a></li>
+      <li class="active"><a href="deskify.html">Deskify Case Study</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div id="main">
+    <article class="post">
+
+      <header class="major">
+        <span class="date">Performance Case Study</span>
+        <h1>Product & Profitability Performance Dashboard</h1>
+        <p>
+          <strong>Client:</strong> Deskify Office Supplies &nbsp;|&nbsp;
+          <strong>Industry:</strong> Retail & Distribution &nbsp;|&nbsp;
+          <strong>Tool:</strong> Tableau
+        </p>
+      </header>
+
+      <!-- Slider -->
+      <div class="slider" id="deskify-slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="images/deskify_dashboard_1.png" alt="Deskify Product Performance Dashboard" />
+          </div>
+          <div class="slide">
+            <img src="images/deskify_dashboard_2.png" alt="Deskify Customer & Regional Profitability Dashboard" />
+          </div>
+        </div>
+
+        <div class="dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+        </div>
+
+        <p class="slider-hint">Tip: Swipe or click dots to explore dashboards.</p>
+      </div>
+
+      <hr />
+
+      <h2>Problem Statement</h2>
+      <p>
+        Deskify Office Supplies required a consolidated view of product, customer, and regional performance
+        across multiple years to support profitability-driven decision-making.
+      </p>
+
+      <ul>
+        <li>Limited visibility into high- and low-performing product categories</li>
+        <li>Difficulty identifying profitable customer segments</li>
+        <li>Regional performance disparities not clearly understood</li>
+        <li>Need for executive-ready performance reporting</li>
+      </ul>
+
+      <hr />
+
+      <h2>Project Objective</h2>
+      <p>
+        Develop interactive Tableau dashboards to:
+      </p>
+      <ul>
+        <li>Track revenue, profit, orders, and customer growth</li>
+        <li>Analyze product and sub-category profitability</li>
+        <li>Identify top-performing customers and regions</li>
+        <li>Enable data-driven strategic planning</li>
+      </ul>
+
+      <hr />
+
+      <h2>Data Overview</h2>
+      <ul>
+        <li><strong>Orders Data:</strong> sales, profit, quantity, ship mode, and time series</li>
+        <li><strong>Product Data:</strong> categories, sub-categories, and product names</li>
+        <li><strong>Customer Data:</strong> customer segments and profitability</li>
+        <li><strong>Geographic Data:</strong> regional and state-level performance</li>
+      </ul>
+
+      <hr />
+
+      <h2>Dashboard Walkthrough</h2>
+
+      <h3>Executive KPI Overview</h3>
+      <p>
+        The dashboard opens with key KPIs including <strong>Total Revenue, Total Profit,
+        Total Orders, Customer Count, and Profit Margin</strong>.
+        These metrics provide an immediate snapshot of business performance.
+      </p>
+
+      <h3>Product Category Profitability</h3>
+      <p>
+        Donut charts and bar visuals highlight profit contribution by
+        <strong>Technology, Office Supplies, and Furniture</strong>,
+        clearly showing Office Supplies as the dominant profit driver.
+      </p>
+
+      <h3>Sub-Category Analysis</h3>
+      <p>
+        A ranked bar chart reveals top-performing sub-categories such as
+        <strong>Binders, Paper, and Furnishings</strong>, while also identifying
+        underperforming items like Copiers.
+      </p>
+
+      <h3>Customer & Regional Insights</h3>
+      <p>
+        Tree maps and flow visuals analyse profit by customer name, segment,
+        and region, allowing stakeholders to pinpoint high-value customers
+        and regions driving overall profitability.
+      </p>
+
+      <h3>Time-Series Profit Trends</h3>
+      <p>
+        Monthly profit trends highlight seasonality, peaks, and declines,
+        supporting forecasting and promotional planning.
+      </p>
+
+      <hr />
+
+      <h2>Conclusion</h2>
+      <p>
+        This Tableau solution provides Deskify with a comprehensive,
+        interactive view of performance across products, customers,
+        and regions.
+      </p>
+
+      <ul>
+        <li>Improved visibility into profit drivers</li>
+        <li>Clear identification of growth opportunities</li>
+        <li>Actionable insights for strategic decision-making</li>
+      </ul>
+
+      <ul class="actions special">
+        <li><a href="tableauprojects.html" class="button">Back to Projects</a></li>
+        <li><a href="index.html" class="button">Home</a></li>
+      </ul>
+
+    </article>
+  </div>
+
+  <div id="copyright">
+    <ul>
+      <li>&copy; Oluwaseun Muyiwa</li>
+      <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Slider JS -->
+<script>
+window.addEventListener("load", () => {
+  const slider = document.getElementById("deskify-slider");
+  const slides = slider.querySelector(".slides");
+  const dots = slider.querySelectorAll(".dot");
+  let index = 0;
+
+  function update() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      index = parseInt(dot.dataset.index, 10);
+      update();
+    });
+  });
+
+  setInterval(() => {
+    index = (index + 1) % dots.length;
+    update();
+  }, 4500);
+});
+</script>
+
+</body>
+</html>
