@@ -15,6 +15,6 @@ This is my professional data analytics portfolio website, built to showcase my s
 
 - **Email:** [Muyiwa931@gmail.com](mailto:Muyiwa931@gmail.com)
 - **LinkedIn:** [Oluwaseun Muyiwa](https://www.linkedin.com/in/oluwaseun-muyiwa-062037272/)
-- **GitHub:** [moschinez](https://moschinez.github.io/data-portfolio/index.html)
+- **GitHub:** [Data-portfolio](https://moschinez.github.io/data-portfolio/index.html)
 
 © 2025 Oluwaseun Muyiwa. All rights reserved.
