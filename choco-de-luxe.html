@@ -16,74 +16,106 @@
       overflow: hidden;
       margin-bottom: 2.5rem;
     }
+
     #choco-slider .slides {
       display: flex;
       transition: transform 0.8s ease-in-out;
+      will-change: transform;
     }
-    #choco-slider .slide { min-width: 100%; }
-    #choco-slider img { width: 100%; border-radius: 6px; }
-    #choco-slider .dots { text-align: center; margin-top: 12px; }
+
+    #choco-slider .slide {
+      min-width: 100%;
+    }
+
+    #choco-slider img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+
+    #choco-slider .dots {
+      text-align: center;
+      margin-top: 12px;
+    }
+
     #choco-slider .dot {
-      height: 12px; width: 12px; margin: 0 6px;
-      background-color: #bbb; border-radius: 50%;
-      display: inline-block; cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-    #choco-slider .dot.active { background-color: #2e7df6; }
+
+    #choco-slider .dot.active {
+      background-color: #2e7df6;
+    }
+
     #choco-slider .slider-hint {
-      text-align: center; font-size: 0.9rem; opacity: 0.7;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #choco-slider .slides { transition: none; }
     }
   </style>
 </head>
 
 <body class="is-preload">
-<div id="wrapper" class="fade-in">
 
-  <header id="header">
-    <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-  </header>
+  <div id="wrapper" class="fade-in">
 
-  <nav id="nav">
-    <ul class="links">
-      <li><a href="index.html">Portfolio</a></li>
-      <li><a href="tableauprojects.html">Projects</a></li>
-      <li class="active"><a href="choco-de-luxe.html">Choco de Luxe</a></li>
-    </ul>
-  </nav>
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+    </header>
 
-  <div id="main">
-    <article class="post">
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="tableauprojects.html">Projects</a></li>
+        <li class="active"><a href="choco-de-luxe.html">Choco de Luxe Case Study</a></li>
+      </ul>
+    </nav>
 
-      <header class="major">
-        <span class="date">Tableau Case Study</span>
-        <h1>Sales & Regional Performance Analytics</h1>
-        <p>
-          <strong>Client:</strong> Choco de Luxe &nbsp;|&nbsp;
-          <strong>Industry:</strong> Premium Food & Beverage &nbsp;|&nbsp;
-          <strong>Tool:</strong> Tableau
-        </p>
-        <p>
-          An interactive Tableau solution designed to analyse profitability,
-          regional performance, channel effectiveness, and salesforce productivity
-          across European markets.
-        </p>
-      </header>
+    <!-- Main -->
+    <div id="main">
 
-      <!-- Slider -->
-      <div id="choco-slider">
-        <div class="slides">
-          <div class="slide">
-            <img src="images/choco_dashboard.png" alt="Tableau Dashboard Overview" />
+      <article class="post">
+        <header class="major">
+          <span class="date">Performance Case Study</span>
+          <h1>Sales & Regional Performance Analytics</h1>
+          <p>
+            <strong>Client:</strong> Choco de Luxe &nbsp;|&nbsp;
+            <strong>Industry:</strong> Premium Food & Beverage &nbsp;|&nbsp;
+            <strong>Tool:</strong> Tableau
+          </p>
+        </header>
+
+        <!-- ✅ AUTO SLIDER (2 images) -->
+        <div class="slider" id="choco-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="images/choco_dashboard.png" alt="Choco de Luxe Tableau Dashboard - Overview" />
+            </div>
+            <div class="slide">
+              <img src="images/choco_dashboard2.png" alt="Choco de Luxe Tableau Dashboard - Performance View" />
+            </div>
           </div>
-          <div class="slide">
-            <img src="images/choco_dashboard2.png" alt="Tableau Dashboard Performance View" />
+
+          <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
           </div>
+
+          <p class="slider-hint">Tip: Swipe/trackpad left-right or click the dots to view the next dashboard.</p>
         </div>
-        <div class="dots">
-          <span class="dot active" data-index="0"></span>
-          <span class="dot" data-index="1"></span>
-        </div>
-        <p class="slider-hint">Swipe or click dots to explore dashboards</p>
-      </div>
 
       <hr />
 
