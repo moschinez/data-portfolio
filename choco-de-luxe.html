@@ -248,6 +248,94 @@
     </ul>
   </div>
 
-</div>
+     </div>
+  
+<!-- Theme Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Slider JS -->
+  <script>
+    window.addEventListener("load", () => {
+      const slider = document.getElementById("choco-slider");
+      if (!slider) return;
+
+      const slides = slider.querySelector(".slides");
+      const dots = slider.querySelectorAll(".dot");
+      const totalSlides = dots.length;
+
+      let index = 0;
+      let startX = 0;
+      let isDragging = false;
+
+      function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(d => d.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
+
+      // Auto slide
+      let autoSlide = setInterval(() => {
+        index = (index + 1) % totalSlides;
+        updateSlider();
+      }, 4500);
+
+      function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => {
+          index = (index + 1) % totalSlides;
+          updateSlider();
+        }, 4500);
+      }
+
+      // Click dots
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          index = parseInt(dot.dataset.index, 10);
+          updateSlider();
+          resetAutoSlide();
+        });
+      });
+
+      // Touch swipe
+      slides.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      slides.addEventListener("touchend", e => {
+        if (!isDragging) return;
+        const endX = e.changedTouches[0].clientX;
+        handleSwipe(endX);
+      });
+
+      // Mouse drag
+      slides.addEventListener("mousedown", e => {
+        startX = e.clientX;
+        isDragging = true;
+      });
+
+      slides.addEventListener("mouseup", e => {
+        if (!isDragging) return;
+        const endX = e.clientX;
+        handleSwipe(endX);
+      });
+
+      function handleSwipe(endX) {
+        const diff = startX - endX;
+        if (diff > 50) index = (index + 1) % totalSlides;
+        else if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
+        updateSlider();
+        resetAutoSlide();
+        isDragging = false;
+      }
+    });
+  </script>
+
 </body>
 </html>
