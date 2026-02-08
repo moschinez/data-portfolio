@@ -16,422 +16,206 @@
       overflow: hidden;
       margin-bottom: 2.5rem;
     }
-
     #choco-slider .slides {
       display: flex;
       transition: transform 0.8s ease-in-out;
-      will-change: transform;
     }
-
-    #choco-slider .slide {
-      min-width: 100%;
-    }
-
-    #choco-slider img {
-      width: 100%;
-      display: block;
-      border-radius: 6px;
-    }
-
-    #choco-slider .dots {
-      text-align: center;
-      margin-top: 12px;
-    }
-
+    #choco-slider .slide { min-width: 100%; }
+    #choco-slider img { width: 100%; border-radius: 6px; }
+    #choco-slider .dots { text-align: center; margin-top: 12px; }
     #choco-slider .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 6px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      height: 12px; width: 12px; margin: 0 6px;
+      background-color: #bbb; border-radius: 50%;
+      display: inline-block; cursor: pointer;
     }
-
-    #choco-slider .dot.active {
-      background-color: #2e7df6;
-    }
-
+    #choco-slider .dot.active { background-color: #2e7df6; }
     #choco-slider .slider-hint {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #choco-slider .slides { transition: none; }
+      text-align: center; font-size: 0.9rem; opacity: 0.7;
     }
   </style>
 </head>
 
 <body class="is-preload">
+<div id="wrapper" class="fade-in">
 
-  <div id="wrapper" class="fade-in">
+  <header id="header">
+    <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+  </header>
 
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-    </header>
+  <nav id="nav">
+    <ul class="links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="tableauprojects.html">Projects</a></li>
+      <li class="active"><a href="choco-de-luxe.html">Choco de Luxe</a></li>
+    </ul>
+  </nav>
 
-    <!-- Nav -->
-    <nav id="nav">
-      <ul class="links">
-        <li><a href="index.html">Portfolio</a></li>
-        <li><a href="tableauprojects.html">Projects</a></li>
-        <li class="active"><a href="choco-de-luxe.html">Choco de Luxe Case Study</a></li>
-      </ul>
-    </nav>
+  <div id="main">
+    <article class="post">
 
-    <!-- Main -->
-    <div id="main">
+      <header class="major">
+        <span class="date">Tableau Case Study</span>
+        <h1>Sales & Regional Performance Analytics</h1>
+        <p>
+          <strong>Client:</strong> Choco de Luxe &nbsp;|&nbsp;
+          <strong>Industry:</strong> Premium Food & Beverage &nbsp;|&nbsp;
+          <strong>Tool:</strong> Tableau
+        </p>
+        <p>
+          An interactive Tableau solution designed to analyse profitability,
+          regional performance, channel effectiveness, and salesforce productivity
+          across European markets.
+        </p>
+      </header>
 
-      <article class="post">
-        <header class="major">
-          <span class="date">Performance Case Study</span>
-          <h1>Sales & Regional Performance Analytics</h1>
-          <p>
-            <strong>Client:</strong> Choco de Luxe &nbsp;|&nbsp;
-            <strong>Industry:</strong> Premium Food & Beverage &nbsp;|&nbsp;
-            <strong>Tool:</strong> Tableau
-          </p>
-        </header>
-
-        <!-- ✅ AUTO SLIDER (2 images) -->
-        <div class="slider" id="choco-slider">
-          <div class="slides">
-            <div class="slide">
-              <img src="images/choco_dashboard.png" alt="Choco de Luxe Tableau Dashboard - Overview" />
-            </div>
-            <div class="slide">
-              <img src="images/choco_dashboard2.png" alt="Choco de Luxe Tableau Dashboard - Performance View" />
-            </div>
+      <!-- Slider -->
+      <div id="choco-slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="images/choco_dashboard.png" alt="Tableau Dashboard Overview" />
           </div>
-
-          <div class="dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
+          <div class="slide">
+            <img src="images/choco_dashboard2.png" alt="Tableau Dashboard Performance View" />
           </div>
-
-          <p class="slider-hint">Tip: Swipe/trackpad left-right or click the dots to view the next dashboard.</p>
         </div>
+        <div class="dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+        </div>
+        <p class="slider-hint">Swipe or click dots to explore dashboards</p>
+      </div>
 
-        <hr />
+      <hr />
 
-<h2>Problem Statement</h2>
-<p>
-  Despite strong brand equity and product quality, Choco de Luxe lacked a
-  <strong>centralized, data-driven view</strong> of sales and operational performance across Europe.
-</p>
-
-<p>Key challenges included:</p>
-<ul>
-  <li>Underperforming cities and regions</li>
-  <li>Inconsistent delivery outcomes (completed vs cancelled orders)</li>
-  <li>Limited visibility into channel profitability and salesperson productivity</li>
-  <li>Difficulty aligning product strategy with evolving customer behaviour </li>
-</ul>
-
-<p>
-  Leadership required actionable insights to optimise <strong>sales strategy,
-  delivery efficiency, and regional growth</strong>.
-</p>
-
-<hr />
-
-<h2>Project Objective</h2>
-<p>
-  Analyse Choco de Luxe’s sales performance across <strong>locations, channels,
-  salespeople, and products</strong>, and deliver interactive Tableau dashboards
-  to support strategic decision-making on:
-</p>
-
-<ul>
-  <li>Product positioning</li>
-  <li>Channel effectiveness</li>
-  <li>Sales force productivity</li>
-  <li>Regional expansion and optimization</li>
-</ul>
-
-<hr />
-
-<h2>Data Overview</h2>
-
-<h3>Sales Fact Table</h3>
-<ul>
-  <li>TransactionID</li>
-  <li>Date</li>
-  <li>SalesPersonID</li>
-  <li>LocationID</li>
-  <li>ProductID</li>
-  <li>Boxes Shipped</li>
-  <li>Sales Channel (Website, In-store, Supermarket)</li>
-  <li>Delivery Status (Completed, Cancelled)</li>
-</ul>
-
-<h3>Location Dimension</h3>
-<ul>
-  <li>LocationID</li>
-  <li>Country</li>
-  <li>City</li>
-  <li>Region</li>
-</ul>
-
-<h3>Salesperson Dimension</h3>
-<ul>
-  <li>SalesPersonID</li>
-  <li>Name</li>
-  <li>Email</li>
-  <li>Hire Date</li>
-</ul>
-
-<h3>Product Dimension</h3>
-<ul>
-  <li>ProductID</li>
-  <li>Product Name</li>
-  <li>Category (Dark, Milk, etc.)</li>
-  <li>Cocoa Percentage</li>
-  <li>Cost per Unit</li>
-  <li>Price per Box</li>
-  <li>Organic Indicator</li>
-</ul>
-
-<hr />
-
-<h2>Tools & Methodology</h2>
-<ul>
-  <li> Modelled fact and dimension tables for analytical reporting</li>
-  <li>Created calculated fields for revenue, cost, profit, and margins</li>
-  <li>Applied filters and parameters for dynamic comparisons</li>
-  <li>Designed interactive Tableau dashboards for business users</li>
-</ul>
-
-<hr />
-
-        <h2>Introduction</h2>
-        <p>
-          Today, I’ll be walking you through an interactive <strong>Tableau dashboard</strong> built for <strong>Choco de Luxe</strong>,
-          a premium artisanal chocolate brand operating across multiple European cities.
-          The purpose of this dashboard is to provide a unified view of <strong>sales performance, regional trends,
-          channel profitability, product margins, and salesperson productivity</strong>—supporting data-driven strategic decisions.
-        </p>
-
-        <hr />
-
-        <h2>Executive Sales Performance Overview</h2>
-
-        <h3>Key Business KPIs</h3>
-        <p>
-          At the top of the dashboard, we start with the core KPIs, which provide an instant snapshot of business health.
-          These figures update dynamically as filters such as <strong>Year, Region, and Organic Type</strong> are applied.
-        </p>
-
-        <ul>
-          <li><strong>Total Transactions:</strong> 1,094</li>
-          <li><strong>Revenue:</strong> £5.32M</li>
-          <li><strong>Cost:</strong> £2.87M</li>
-          <li><strong>Profit:</strong> £2.45M</li>
-          <li><strong>Profit Margin:</strong> 46%</li>
-        </ul>
-
-        <hr />
-
-        <h2>Profit &amp; Revenue Trend Analysis</h2>
-        <p>
-          The monthly trend analysis shows a dip in <strong>February</strong>, followed by steady growth through <strong>June</strong>
-          (peak performance). A slight decline appears in <strong>July–August</strong>, suggesting seasonality or shifting demand.
-          This supports planning for promotions, staffing, and inventory during peak and off-peak periods.
-        </p>
-
-        <hr />
-
-        <h2>Profit vs Boxes Shipped</h2>
-        <p>
-          This view highlights a strong positive relationship between shipment volume and profit.
-          Higher boxes shipped translate into higher profitability—indicating operational efficiency as volume scales.
-        </p>
-
-        <hr />
-
-        <h2>Channel Performance Analysis</h2>
-
-        <h3>Transactions by Channel</h3>
-        <p>
-          The dashboard compares transaction volume across channels such as <strong>Website</strong>, <strong>Warehouse</strong>, and
-          <strong>Social Media</strong>, helping identify where customer demand is strongest.
-        </p>
-
-        <h3>Profit by Channel</h3>
-        <p>
-          The <strong>Website</strong> channel generates the highest profit contribution, while <strong>Social Media</strong> produces volume
-          with comparatively lower profitability. This supports prioritising website promotions and optimising social media pricing/costs.
-        </p>
-
-        <hr />
-
-        <h2>Product &amp; Category Profitability</h2>
-        <p>
-          Category analysis shows <strong>Dark Chocolate</strong> as the most profitable segment, followed by Milk and Nut Chocolate.
-          Product-level performance highlights top profit drivers such as <strong>Eclairs</strong> and <strong>99% Dark &amp; Pure</strong>.
-          These insights support product mix optimisation and premium positioning.
-        </p>
-
-        <hr />
-
-        <h2>Regional Sales Performance</h2>
-        <p>
-          The geographic view highlights major revenue contributors such as <strong>Italy, Spain, and Germany</strong>,
-          while also identifying underperforming regions that may require targeted marketing, distribution review, or pricing adjustments.
-        </p>
-
-        <hr />
-
-        <h2>Salesperson Performance</h2>
-        <p>
-          Salespeople are ranked by profit contribution against a <strong>€100,000 profit target</strong>.
-          The Top/Bottom performer views enable leadership to recognise high performers and flag coaching or territory optimisation needs.
-        </p>
-
-        <hr />
-
-        <h2>Organic vs Non-Organic Product Insights</h2>
-        <p>
-          Organic products perform strongly in premium regions and website sales, while non-organic products dominate high-volume warehouse activity.
-          This supports a differentiated channel strategy, marketing focus, and future product development planning.
-        </p>
-
-        <hr />
-
-        <h2>Dashboard Interactivity</h2>
-        <p>
-          All visuals are fully interactive. Users can filter by <strong>Year</strong>, <strong>Region</strong>, and <strong>Organic Type</strong>,
-          and the dashboard updates in real time—enabling deeper exploration of performance drivers.
-        </p>
-
-        <hr />
-
-        <h2>Conclusion</h2>
-        <p>
-          In summary, this Tableau dashboard provides Choco de Luxe with a comprehensive view of profitability and performance across
-          products, channels, regions, and sales teams—empowering leaders to make strategic, data-driven decisions that support sustainable growth.
-        </p>
-
-        <h2>Skills Demonstrated</h2>
-        <p>
-          Tableau • KPI Design • Profitability Analysis • Geographic Analytics • Channel Performance • Salesperson Performance Tracking • Dashboard Storytelling
-        </p>
-
-       <ul class="actions special">
-  <li><a href="tableauprojects.html" class="button">Back to Projects</a></li>
-  <li><a href="index.html" class="button">Home</a></li>
-  <li>
-    <a href="Downloads/choco_de_luxe_sales_performance_insight.zip"
-       class="button primary"
-       download>
-      Download Project Files
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <!-- Copyright -->
-    <div id="copyright">
+      <h2>Business Problem</h2>
+      <p>
+        Despite strong brand equity and premium products, Choco de Luxe lacked
+        a centralized, data-driven view of sales and operational performance
+        across European regions.
+      </p>
       <ul>
-        <li>&copy; Oluwaseun Muyiwa</li>
-        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        <li>Underperforming cities and regions</li>
+        <li>Limited visibility into channel profitability</li>
+        <li>Inconsistent delivery outcomes</li>
+        <li>Difficulty tracking salesperson productivity</li>
       </ul>
-    </div>
 
+      <hr />
+
+      <h2>Project Objective</h2>
+      <p>
+        To analyse sales performance across locations, channels, products,
+        and salespeople, and deliver interactive Tableau dashboards
+        that support strategic decisions on growth, pricing, and resource allocation.
+      </p>
+
+      <hr />
+
+      <h2>Data Model</h2>
+      <p>
+        The analysis uses a star schema with a central sales fact table
+        connected to product, location, and salesperson dimensions.
+      </p>
+
+      <hr />
+
+      <h2>Tools & Methodology</h2>
+      <ul>
+        <li>Modelled fact and dimension tables for analytical reporting</li>
+        <li>Created calculated fields for revenue, cost, profit, and margins</li>
+        <li>Applied filters and parameters for dynamic analysis</li>
+        <li>Designed executive-level Tableau dashboards</li>
+      </ul>
+
+      <hr />
+
+      <h2>Key KPIs Tracked</h2>
+      <ul>
+        <li>Total Transactions</li>
+        <li>Total Revenue, Cost, and Profit</li>
+        <li>Profit Margin (%)</li>
+        <li>Boxes Shipped</li>
+        <li>Salesperson Profit Contribution</li>
+      </ul>
+
+      <hr />
+
+      <h2>Performance Insights</h2>
+      <p>
+        Trend analysis reveals seasonal demand patterns, with peak performance
+        observed mid-year and slight declines during summer months.
+        A strong positive relationship exists between shipment volume and profit,
+        indicating efficient scaling of operations.
+      </p>
+
+      <hr />
+
+      <h2>Channel & Product Analysis</h2>
+      <p>
+        Website sales deliver the highest profitability, while social media
+        channels generate volume at lower margins.
+        Dark Chocolate products lead profitability, supporting premium positioning
+        and product mix optimization.
+      </p>
+
+      <hr />
+
+      <h2>Regional & Salesperson Performance</h2>
+      <p>
+        Italy, Spain, and Germany emerge as top-performing markets.
+        Salesperson rankings against a €100,000 profit target
+        enable recognition of high performers and identification
+        of coaching opportunities.
+      </p>
+
+      <hr />
+
+      <h2>Dashboard Interactivity</h2>
+      <p>
+        Users can filter by Year, Region, and Organic Product Type.
+        All views update dynamically, enabling rapid drill-down
+        into performance drivers.
+      </p>
+
+      <hr />
+
+      <h2>Business Impact</h2>
+      <ul>
+        <li>Improved visibility into profitability across regions and channels</li>
+        <li>Data-driven product and pricing strategy support</li>
+        <li>Clear performance tracking for sales teams</li>
+        <li>Stronger foundation for regional expansion planning</li>
+      </ul>
+
+      <hr />
+
+      <h2>Skills Demonstrated</h2>
+      <p>
+        Tableau • Profitability Analysis • Geographic Analytics • KPI Design •
+        Sales Performance Tracking • Dashboard Storytelling
+      </p>
+
+      <ul class="actions special">
+        <li><a href="tableauprojects.html" class="button">Back to Projects</a></li>
+        <li><a href="index.html" class="button">Home</a></li>
+        <li>
+          <a href="Downloads/choco_de_luxe_sales_performance_insight.zip"
+             class="button primary" download>
+            Download Project Files
+          </a>
+        </li>
+      </ul>
+
+    </article>
   </div>
 
-  <!-- Theme Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <div id="copyright">
+    <ul>
+      <li>&copy; Oluwaseun Muyiwa</li>
+      <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
 
-  <!-- Slider JS -->
-  <script>
-    window.addEventListener("load", () => {
-      const slider = document.getElementById("choco-slider");
-      if (!slider) return;
-
-      const slides = slider.querySelector(".slides");
-      const dots = slider.querySelectorAll(".dot");
-      const totalSlides = dots.length;
-
-      let index = 0;
-      let startX = 0;
-      let isDragging = false;
-
-      function updateSlider() {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach(d => d.classList.remove("active"));
-        dots[index].classList.add("active");
-      }
-
-      // Auto slide
-      let autoSlide = setInterval(() => {
-        index = (index + 1) % totalSlides;
-        updateSlider();
-      }, 4500);
-
-      function resetAutoSlide() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(() => {
-          index = (index + 1) % totalSlides;
-          updateSlider();
-        }, 4500);
-      }
-
-      // Click dots
-      dots.forEach(dot => {
-        dot.addEventListener("click", () => {
-          index = parseInt(dot.dataset.index, 10);
-          updateSlider();
-          resetAutoSlide();
-        });
-      });
-
-      // Touch swipe
-      slides.addEventListener("touchstart", e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      });
-
-      slides.addEventListener("touchend", e => {
-        if (!isDragging) return;
-        const endX = e.changedTouches[0].clientX;
-        handleSwipe(endX);
-      });
-
-      // Mouse drag
-      slides.addEventListener("mousedown", e => {
-        startX = e.clientX;
-        isDragging = true;
-      });
-
-      slides.addEventListener("mouseup", e => {
-        if (!isDragging) return;
-        const endX = e.clientX;
-        handleSwipe(endX);
-      });
-
-      function handleSwipe(endX) {
-        const diff = startX - endX;
-        if (diff > 50) index = (index + 1) % totalSlides;
-        else if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
-        updateSlider();
-        resetAutoSlide();
-        isDragging = false;
-      }
-    });
-  </script>
-
+</div>
 </body>
 </html>
