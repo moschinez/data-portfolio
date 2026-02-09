@@ -20,12 +20,12 @@
 
     <!-- Nav -->
     <nav id="nav">
-  <ul class="links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="sqlprojects.html">Projects</a></li>
-    <li class="active"><a href="nextgen-corp.html">NextGen (SQL)</a></li>
-  </ul>
-</nav>
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sqlprojects.html">Projects</a></li>
+        <li class="active"><a href="nextgen-corp.html">NextGen (SQL)</a></li>
+      </ul>
+    </nav>
 
     <!-- Main -->
     <div id="main">
@@ -39,142 +39,135 @@
             <strong>Industry:</strong> Technology (Software & Hardware) &nbsp;|&nbsp;
             <strong>Tools:</strong> PostgreSQL, SQL
           </p>
+          <p>
+            A SQL-driven HR analytics project designed to uncover insights into
+            employee retention, performance distribution, attendance behaviour,
+            and compensation fairness to support workforce planning.
+          </p>
         </header>
 
         <hr />
 
-        <h2>Introduction</h2>
+        <h2>Business Context</h2>
         <p>
-          Today, I’ll be walking you through an HR analytics case study built for <strong>NextGen Corp</strong>,
-          a fast-growing technology company focused on innovation across software and hardware.
-          The goal of this analysis is to provide a data-driven view of <strong>employee retention, performance trends,
-          attendance patterns, and compensation fairness</strong> to support workforce planning and long-term growth.
+          NextGen Corp is a rapidly scaling technology company operating across
+          software and hardware divisions. As the workforce expanded, HR leadership
+          faced challenges maintaining employee retention, consistent performance,
+          and fair compensation practices across departments.
         </p>
-
-        <hr />
-
-        <h2>Business Problem</h2>
         <p>
-          As the company scaled, HR leadership identified rising concerns around:
-        </p>
-        <ul>
-          <li>Increasing employee turnover and retention risk</li>
-          <li>Performance variability across departments</li>
-          <li>Salary disparities impacting fairness and satisfaction</li>
-        </ul>
-        <p>
-          The HR team required a structured analytics approach to track trends, identify root causes, and support
-          consistent, fair workforce decisions.
+          A centralized, data-driven HR analytics solution was required to identify
+          workforce risks, performance gaps, and compensation inconsistencies.
         </p>
 
         <hr />
 
         <h2>Project Objectives</h2>
         <ul>
-          <li>Identify trends and patterns in employee retention and turnover</li>
-          <li>Evaluate performance across departments and over time</li>
-          <li>Assess the relationship between salary and performance to support fairness</li>
-          <li>Deliver actionable insights to guide HR strategy and workforce planning</li>
+          <li>Analyse employee retention and turnover trends</li>
+          <li>Evaluate performance consistency across departments</li>
+          <li>Assess salary distribution and fairness relative to performance</li>
+          <li>Provide actionable insights to support HR strategy and workforce planning</li>
         </ul>
 
         <hr />
 
         <h2>Data Overview</h2>
         <p>
-          Analysis was performed using a relational database restored into PostgreSQL, including the following tables:
+          Analysis was conducted using a relational database restored into PostgreSQL,
+          consisting of the following tables:
         </p>
         <ul>
-          <li><strong>Employees:</strong> employee profile, hire date, salary, department, performance score, attendance rate</li>
-          <li><strong>Departments:</strong> department list and structure (Engineering, Sales, HR, Marketing, etc.)</li>
-          <li><strong>Performance:</strong> monthly performance scores for trend analysis</li>
-          <li><strong>Attendance:</strong> present/absent records to evaluate engagement and consistency</li>
+          <li><strong>Employees:</strong> profile, hire date, department, salary, performance score, attendance rate</li>
+          <li><strong>Departments:</strong> department structure and classifications</li>
+          <li><strong>Performance:</strong> historical performance scores for trend analysis</li>
+          <li><strong>Attendance:</strong> presence and absence records</li>
           <li><strong>Turnover:</strong> employee exits and reasons for leaving</li>
-          <li><strong>Salaries:</strong> salary history and changes over time</li>
+          <li><strong>Salaries:</strong> salary history and adjustments over time</li>
         </ul>
 
         <hr />
 
-        <h2>Approach &amp; Methodology</h2>
+        <h2>Analytical Approach</h2>
         <ul>
-          <li>Created the <strong>NextGen</strong> database and restored the provided dataset into PostgreSQL</li>
-          <li>Joined employee, department, performance, attendance, and salary tables using keys</li>
-          <li>Built SQL queries to compute turnover rate, tenure, performance distribution, and salary benchmarks</li>
-          <li>Segmented results by department to identify hotspots and improvement opportunities</li>
+          <li>Restored and structured the HR dataset within PostgreSQL</li>
+          <li>Performed relational joins across employee, department, performance, and salary tables</li>
+          <li>Built SQL queries to calculate tenure, turnover rates, performance segmentation, and salary benchmarks</li>
+          <li>Segmented insights by department to identify high-risk and high-performing teams</li>
         </ul>
 
         <hr />
 
-        <h2>Walkthrough: Key Analysis Areas</h2>
+        <h2>Key Analysis Areas</h2>
 
-        <h3>1) Employee Retention Analysis</h3>
-        <p>
-          This section focuses on turnover patterns and retention risk across departments.
-          Key outputs included:
-        </p>
+        <h3>Employee Retention & Turnover</h3>
         <ul>
-          <li>Identifying the <strong>top 5 longest-serving employees</strong> (tenure leaders)</li>
-          <li>Calculating <strong>turnover rate by department</strong> to highlight high-risk teams</li>
-          <li>Flagging <strong>employees at risk of leaving</strong> using performance and attendance indicators</li>
-          <li>Summarising the <strong>main reasons for employee exits</strong> to support corrective action</li>
+          <li>Calculated turnover rates by department</li>
+          <li>Identified top long-tenured employees</li>
+          <li>Flagged employees at retention risk using performance and attendance indicators</li>
+          <li>Analysed primary reasons for employee exits</li>
         </ul>
 
-        <h3>2) Performance Analysis</h3>
-        <p>
-          Performance analysis evaluated employee performance distribution and department consistency.
-        </p>
+        <h3>Performance Analysis</h3>
         <ul>
-          <li>Measured the total number of employees who left the company</li>
-          <li>Segmented employees into <strong>high performers (5.0)</strong> and <strong>low performers (&lt;3.5)</strong></li>
-          <li>Identified departments with the highest concentration of high and low performers</li>
-          <li>Computed <strong>average performance score by department</strong> to benchmark teams</li>
+          <li>Segmented employees into high performers (5.0) and low performers (&lt;3.5)</li>
+          <li>Computed average performance score by department</li>
+          <li>Identified departments with performance variability requiring intervention</li>
         </ul>
 
-        <h3>3) Salary Analysis</h3>
-        <p>
-          Salary analysis assessed compensation structure and fairness relative to performance.
-        </p>
+        <h3>Compensation & Salary Analysis</h3>
         <ul>
-          <li>Computed total company salary expense</li>
-          <li>Calculated average salary by job title</li>
-          <li>Identified employees earning above <strong>$80,000</strong></li>
-          <li>Evaluated <strong>salary vs performance correlation</strong> across departments to detect gaps</li>
+          <li>Calculated total salary expenditure</li>
+          <li>Computed average salary by job role</li>
+          <li>Identified high-earning employees (&gt;$80,000)</li>
+          <li>Assessed salary alignment with performance across departments</li>
+        </ul>
+
+        <hr />
+
+        <h2>Key KPIs Tracked</h2>
+        <ul>
+          <li>Turnover Rate by Department</li>
+          <li>Average Employee Tenure</li>
+          <li>Performance Score Distribution</li>
+          <li>Average Salary by Role and Department</li>
         </ul>
 
         <hr />
 
         <h2>Business Impact</h2>
         <ul>
-          <li>Identified departments with elevated turnover risk requiring targeted interventions</li>
-          <li>Highlighted performance variability and areas needing coaching or process improvements</li>
-          <li>Detected salary inconsistencies impacting fairness and employee satisfaction</li>
-          <li>Supported data-driven HR decisions around retention planning and compensation alignment</li>
+          <li>Identified departments with elevated retention risk</li>
+          <li>Highlighted performance gaps requiring coaching or process improvements</li>
+          <li>Detected salary inconsistencies impacting fairness and satisfaction</li>
+          <li>Enabled data-driven HR decisions around retention and compensation strategy</li>
         </ul>
+
+        <hr />
 
         <h2>Skills Demonstrated</h2>
         <p>
-          PostgreSQL • SQL • Relational Joins • Workforce Analytics • Turnover Metrics •
+          PostgreSQL • SQL • Relational Joins • HR Analytics • Turnover Metrics •
           Performance Segmentation • Compensation Analysis • Insight Reporting
         </p>
 
-  <ul class="actions special">
-  <li><a href="sqlprojects.html" class="button">Back to Projects</a></li>
-  <li><a href="index.html" class="button">Home</a></li>
-  <li>
-    <a href="Downloads/nextgen_sql_project_files.zip"
-       class="button primary"
-       download>
-      Download Project Files
-    </a>
-  </li>
-</ul>
-
-
+        <ul class="actions special">
+          <li><a href="sqlprojects.html" class="button">Back to Projects</a></li>
+          <li><a href="index.html" class="button">Home</a></li>
+          <li>
+            <a href="Downloads/nextgen_sql_project_files.zip"
+               class="button primary"
+               download>
+              Download Project Files
+            </a>
+          </li>
+        </ul>
 
       </article>
 
     </div>
 
-    <!-- Copyright -->
+    <!-- Footer -->
     <div id="copyright">
       <ul>
         <li>&copy; Oluwaseun Muyiwa</li>
@@ -184,7 +177,7 @@
 
   </div>
 
-  <!-- Theme Scripts -->
+  <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
   <script src="assets/js/jquery.scrolly.min.js"></script>
