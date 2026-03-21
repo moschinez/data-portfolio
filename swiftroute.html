@@ -1,227 +1,208 @@
 <!DOCTYPE HTML>
-<!--
-  Massively by HTML5 UP
-  html5up.net | @ajlkn
--->
 <html>
-  <head>
-    <title>SwiftRoute Logistics | Excel Case Study</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+	<head>
+		<title>SwiftRoute Logistics | Excel Case Study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  <body class="is-preload">
-    <div id="wrapper" class="fade-in">
+		<div id="wrapper">
 
-      <!-- Header -->
-      <header id="header">
-        <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-      </header>
+			<header id="header">
+				<a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+			</header>
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li><a href="index.html">Portfolio</a></li>
-          <li><a href="excelprojects.html">Projects</a></li>
-          <li class="active"><a href="swiftroute.html">SwiftRoute Logistics</a></li>
-        </ul>
-      </nav>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Portfolio</a></li>
+					<li><a href="excelprojects.html">Projects</a></li>
+					<li class="active"><a href="swiftroute.html">SwiftRoute Logistics</a></li>
+				</ul>
+			</nav>
 
-      <!-- Main -->
-      <div id="main">
+			<div id="main">
+				<article class="post featured">
+					<header class="major">
+						<span class="date">Excel Case Study</span>
+						<h1>Optimising Order Fulfilment</h1>
+						<p>
+							<strong>Client:</strong> SwiftRoute Logistics Ltd. &nbsp;|&nbsp;
+							<strong>Industry:</strong> Logistics &amp; Supply Chain &nbsp;|&nbsp;
+							<strong>Tool:</strong> Microsoft Excel
+						</p>
+						<p>
+							An Excel dashboard identifying the root causes of growing order backlogs and declining
+							customer satisfaction across a UK-wide delivery network.
+						</p>
+					</header>
 
-        <article class="post">
-          <header class="major">
-            <span class="date">Excel Case Study</span>
-            <h1>Optimizing Order Fulfillment</h1>
-            <p>
-              <strong>Client:</strong> SwiftRoute Logistics Ltd. &nbsp;|&nbsp;
-              <strong>Industry:</strong> Logistics & Supply Chain &nbsp;|&nbsp;
-              <strong>Tool:</strong> Microsoft Excel
-            </p>
-            <p>
-              An interactive Excel dashboard designed to improve delivery performance,
-              reduce order backlogs, and enhance operational visibility across routes and zones.
-            </p>
-          </header>
+					<span class="image fit"><img src="images/swiftroute_dashboard.png" alt="SwiftRoute Logistics Excel Dashboard" /></span>
 
-          <!-- Dashboard Image -->
-          <span class="image fit">
-            <img src="images/swiftroute_dashboard.png" alt="SwiftRoute Logistics Excel Dashboard" />
-          </span>
+					<hr />
 
-          <hr />
+					<h2>1. Business Problem</h2>
+					<p>
+						SwiftRoute Logistics Ltd., a Manchester-based logistics company with over twenty years of
+						experience in nationwide last-mile delivery, was experiencing a deterioration in performance
+						as order volumes increased. Backlogs were growing, delivery times were becoming inconsistent,
+						and customer complaints were rising — but without centralised performance tracking, management
+						could not pinpoint where the problems were concentrated.
+					</p>
+					<p>The analysis was commissioned to answer three operational questions:</p>
+					<ul>
+						<li>Which routes and zones are generating the most backlogs and delays?</li>
+						<li>Where is customer satisfaction lowest, and why?</li>
+						<li>What operational changes would have the greatest impact on delivery performance?</li>
+					</ul>
 
-          <h2>Business Context</h2>
-          <p>
-            SwiftRoute Logistics Ltd. is a Manchester-based logistics company with over
-            twenty years of experience providing nationwide transportation and last-mile
-            delivery services across the United Kingdom.
-          </p>
-          <p>
-            As order volumes increased, the company began experiencing growing order backlogs,
-            inconsistent delivery times, and rising customer complaints. The absence of
-            centralised performance tracking made it difficult for management to identify
-            bottlenecks and proactively address delays.
-          </p>
+					<hr />
 
-          <hr />
+					<h2>2. Data Overview</h2>
+					<ul>
+						<li><strong>Order Data:</strong> Order ID, Route, Delivery Zone, Order Status</li>
+						<li><strong>Delivery Metrics:</strong> Delivery Time, Delay Duration</li>
+						<li><strong>Operations Data:</strong> Driver ID, Vehicle Type, Allocation Rules</li>
+						<li><strong>Customer Feedback:</strong> Positive, Neutral, Negative, No Feedback</li>
+					</ul>
+					<p>
+						<em>GDPR Note: Driver IDs were used for operational analysis only and were not linked to
+						personal identifiers in outputs. Customer feedback was handled in aggregate — no individual
+						records were surfaced in the dashboard.</em>
+					</p>
 
-          <h2>Project Objective</h2>
-          <p>
-            To analyse order fulfilment data using Microsoft Excel and deliver an interactive
-            dashboard that tracks delivery performance, identifies the root causes of delays
-            and backlogs, and supports data-driven operational decisions.
-          </p>
+					<hr />
 
-          <hr />
+					<h2>3. Data Cleaning &amp; Preparation</h2>
+					<h3>What Was Removed</h3>
+					<ul>
+						<li>Duplicate order entries identified across route and zone records</li>
+						<li>Orders with missing delivery time and zone data that could not be reliably imputed</li>
+					</ul>
+					<h3>What Was Transformed</h3>
+					<ul>
+						<li>Route and zone labels standardised for consistent grouping across all pivot analyses</li>
+						<li>Order status categorised into: Delivered On Time, Delayed, and Backlogged</li>
+						<li>Customer feedback recoded into four clean categories: Positive, Neutral, Negative, No Feedback</li>
+					</ul>
+					<h3>New Calculated Fields Created</h3>
+					<ul>
+						<li><strong>Backlog Flag:</strong> Binary field marking orders that exceeded expected fulfilment windows</li>
+						<li><strong>Backlog Rate:</strong> Backlogged orders ÷ total orders per route or zone</li>
+						<li><strong>CSAT Percentage:</strong> Positive feedback ÷ total feedback-providing orders</li>
+						<li><strong>Average Delay Duration:</strong> Mean delay in hours per route and zone</li>
+					</ul>
 
-          <h2>Data Sources</h2>
-          <ul>
-            <li><strong>Order Data:</strong> Order ID, Route, Delivery Zone, Order Status</li>
-            <li><strong>Delivery Metrics:</strong> Delivery Time, Delay Duration</li>
-            <li><strong>Operations:</strong> Driver ID, Vehicle Type, Allocation Rules</li>
-            <li><strong>Customer Feedback:</strong> Positive, Neutral, Negative, No Feedback</li>
-          </ul>
+					<hr />
 
-          <hr />
+					<h2>4. Data Analysis</h2>
+					<h3>Key KPIs Tracked</h3>
+					<ul>
+						<li>Total Orders processed across the network</li>
+						<li>Backlog Rate by route and zone</li>
+						<li>Average Customer Satisfaction (CSAT) score</li>
+						<li>Total Backlog Volume</li>
+					</ul>
+					<h3>Key Trends &amp; Patterns</h3>
+					<ul>
+						<li>Routes 1 and 2 recorded backlog rates above 51% — more than half of all orders were not fulfilled on time.</li>
+						<li>Zone 2 had the highest delay percentage and backlog rate across the entire network.</li>
+						<li>Route 5 displayed a counterintuitive pattern: one of the lowest average delays, yet among the lowest CSAT scores — satisfaction is not purely driven by delay duration.</li>
+						<li>Only approximately 15% of deliveries received positive customer feedback, with over half generating no feedback at all.</li>
+					</ul>
 
-          <h2>Methodology & Tools</h2>
+					<hr />
 
-          <h3>Data Structuring</h3>
-          <p>
-            Cleaned and standardised route and zone labels, created derived fields such as
-            delayed orders and backlog flags, and structured the dataset into Excel Tables
-            for reliable aggregation.
-          </p>
+					<h2>Insights</h2>
+					<ul>
+						<li><strong>Routes 1 and 2 have a systemic problem, not an isolated one.</strong> Backlog rates above 50% indicate a structural issue — likely driver allocation, vehicle capacity, or route sequencing — rather than occasional failures.</li>
+						<li><strong>Zone 2 is the network's highest-risk area.</strong> Its combination of high delay percentage and high backlog rate makes it the single most impactful intervention point.</li>
+						<li><strong>Low CSAT on Route 5 despite low delays suggests an expectation gap.</strong> Delay reduction alone will not resolve satisfaction on this route — communication, packaging, or handover experience may be the root cause.</li>
+						<li><strong>The 55%+ no-feedback rate is both a data gap and an opportunity.</strong> Without feedback, the business cannot identify dissatisfied customers before they churn.</li>
+					</ul>
 
-          <h3>Data Analysis</h3>
-          <p>
-            Used Pivot Tables and calculated fields to compute KPIs, including
-            backlog rate, CSAT percentage, delay rate, and average delivery time
-            across routes and zones.
-          </p>
+					<hr />
 
-          <h3>Dashboard Design</h3>
-          <p>
-            Built a fully interactive Excel dashboard using KPI tiles, charts,
-            slicers, and conditional formatting to enable dynamic performance analysis.
-          </p>
+					<h2>5. Recommendations</h2>
+					<ul>
+						<li>Prioritise Zone 2 for immediate routing and resource reallocation, with a dedicated operational review of driver assignments and order volumes.</li>
+						<li>Investigate Routes 1 and 2 for structural bottlenecks — specifically whether order volumes exceed realistic route capacity.</li>
+						<li>For Route 5, conduct targeted qualitative research into the customer experience beyond delivery timing — including communication quality and handover procedure.</li>
+						<li>Implement a post-delivery feedback mechanism to close the engagement gap and improve the quality of future analysis.</li>
+					</ul>
 
-          <hr />
+					<hr />
 
-          <h2>Key Performance Indicators</h2>
-          <p>
-            The dashboard tracks four core KPIs:
-          </p>
-          <ul>
-            <li>Total Orders</li>
-            <li>Average Customer Satisfaction (CSAT)</li>
-            <li>Backlog Rate</li>
-            <li>Total Backlog Volume</li>
-          </ul>
-          <p>
-            These KPIs update dynamically as filters are applied, providing real-time
-            operational visibility.
-          </p>
+					<h2>6. Limitations</h2>
+					<ul>
+						<li>The dataset is drawn from a simulated environment and does not account for variables such as traffic patterns, weather events, or seasonal demand spikes.</li>
+						<li>Driver performance is analysed at aggregate level only — individual driver data would enable more targeted operational decisions.</li>
+						<li>The absence of cost data means financial impact projections are estimated rather than modelled from actuals.</li>
+						<li>Customer feedback is sparse and potentially unrepresentative — the 55% no-feedback rate means CSAT scores reflect a self-selected minority.</li>
+					</ul>
 
-          <hr />
+					<hr />
 
-          <h2>Route & Zone Performance Analysis</h2>
-          <p>
-            Analysis by route shows that Routes 1 and 2 have the highest backlog rates
-            (above 51%) and among the lowest CSAT scores, indicating systemic delivery
-            challenges rather than isolated incidents.
-          </p>
-          <p>
-            Route 5 presents an interesting pattern — while it has one of the lowest
-            average delays, its CSAT remains low, suggesting frequent minor delays
-            or unmet delivery expectations.
-          </p>
+					<h2>Business Impact</h2>
+					<p>
+						Routing optimisation targeting Zone 2 and Routes 1 and 2 is projected to reduce order
+						backlogs by 20–30%, decrease expedited delivery costs, and improve on-time delivery rates
+						across the network. Closing the feedback gap would give management the customer intelligence
+						needed to drive CSAT improvement beyond what operational changes alone can achieve.
+					</p>
 
-          <hr />
+					<hr />
 
-          <h2>Backlog & Delay Insights</h2>
-          <p>
-            Zone-level analysis reveals that Zone 2 has the highest delay percentage
-            and backlog rate, making it a priority area for routing optimisation
-            and resource reallocation.
-          </p>
+					<h2>Skills Demonstrated</h2>
+					<p>Excel Data Modelling &bull; Pivot Tables &bull; KPI Design &bull; CSAT &amp; Backlog Analysis &bull; Dashboard Design &bull; Operational Analytics &bull; Business Storytelling</p>
 
-          <hr />
+					<ul class="actions special">
+						<li><a href="excelprojects.html" class="button">Back to Projects</a></li>
+						<li><a href="index.html" class="button">Home</a></li>
+						<li><a href="Downloads/swiftroute-excel-dashboard.zip" class="button primary">Download Project Files</a></li>
+					</ul>
 
-          <h2>Customer Feedback Analysis</h2>
-          <p>
-            Customer feedback analysis shows that only about 15% of deliveries receive
-            positive feedback, while over half of the orders have no feedback recorded.
-            This highlights both service improvement opportunities and gaps in customer
-            engagement.
-          </p>
+				</article>
+			</div>
 
-          <hr />
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt">
+						<h3>About</h3>
+						<p>Data Analyst | Power BI | Tableau | Excel | PostgreSQL</p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:Muyiwa931@gmail.com">Muyiwa931@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/oluwaseun-muyiwa-062037272/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/moschinez" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
 
-          <h2>Dashboard Interactivity</h2>
-          <p>
-            The dashboard includes slicers for delivery zone, route, driver, vehicle type,
-            order status, and customer feedback. All visuals update instantly,
-            allowing stakeholders to drill down into specific operational segments.
-          </p>
+			<div id="copyright">
+				<ul>
+					<li>&copy; OLUWASEUN MUYIWA</li>
+					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
 
-          <hr />
+		</div>
 
-          <h2>Expected Business Impact</h2>
-          <ul>
-            <li>20–30% reduction in order backlogs through improved routing</li>
-            <li>More consistent delivery times and higher on-time delivery rates</li>
-            <li>Reduced operational costs from fewer expedited deliveries</li>
-            <li>Improved customer satisfaction through targeted interventions</li>
-            <li>Centralised, automated performance reporting</li>
-          </ul>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-          <hr />
-
-          <h2>Skills Demonstrated</h2>
-          <p>
-            Excel Data Modelling • Pivot Tables • KPI Design • CSAT & Backlog Analysis •
-            Dashboard Design • Operational Analytics • Business Storytelling
-          </p>
-
-          <!-- ACTION BUTTONS -->
-          <ul class="actions special">
-            <li><a href="excelprojects.html" class="button">Back to Projects</a></li>
-            <li><a href="index.html" class="button">Home</a></li>
-            <li>
-              <a href="Downloads/swiftroute-excel-dashboard.zip"
-                 class="button primary"
-                 download>
-                Download Project Files
-              </a>
-            </li>
-          </ul>
-
-        </article>
-      </div>
-
-      <!-- Footer -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; OLUWASEUN MUYIWA</li>
-          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-  </body>
+	</body>
 </html>
