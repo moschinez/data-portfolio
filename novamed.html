@@ -1,330 +1,210 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title>NovaMed Solutions | Power BI Case Study</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<head>
+		<title>NovaMed Solutions | Power BI Case Study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<div id="wrapper">
 
-  <!-- Slider CSS -->
-  <style>
-    #novamed-slider {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-    }
+			<header id="header">
+				<a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+			</header>
 
-    #novamed-slider .slides {
-      display: flex;
-      transition: transform 0.8s ease-in-out;
-      will-change: transform;
-    }
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Portfolio</a></li>
+					<li><a href="powerbiprojects.html">Projects</a></li>
+					<li class="active"><a href="novamed.html">NovaMed Case Study</a></li>
+				</ul>
+			</nav>
 
-    #novamed-slider .slide {
-      min-width: 100%;
-    }
+			<div id="main">
+				<article class="post featured">
+					<header class="major">
+						<span class="date">Power BI Case Study</span>
+						<h1>Sales Performance &amp; Customer Insights Analytics</h1>
+						<p>
+							<strong>Client:</strong> NovaMed Solutions &nbsp;|&nbsp;
+							<strong>Industry:</strong> Pharmaceutical Distribution &nbsp;|&nbsp;
+							<strong>Tool:</strong> Power BI
+						</p>
+						<p>
+							An end-to-end Power BI solution providing visibility into sales performance,
+							product profitability, and customer behaviour for a pharmaceutical distributor.
+						</p>
+					</header>
 
-    #novamed-slider img {
-      width: 100%;
-      display: block;
-      border-radius: 6px;
-    }
+					<span class="image fit"><img src="images/novamed_dashboard.png" alt="NovaMed Sales Dashboard" /></span>
+					<span class="image fit"><img src="images/novamed_customer_analysis.png" alt="NovaMed Customer Analysis Dashboard" /></span>
+					<p><em>Tip: Swipe/trackpad left-right or click the dots to view the next dashboard.</em></p>
 
-    #novamed-slider .dots {
-      text-align: center;
-      margin-top: 12px;
-    }
+					<hr />
 
-    #novamed-slider .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 6px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+					<h2>1. Business Problem</h2>
+					<p>
+						NovaMed Solutions was accumulating large volumes of sales data but lacked the infrastructure
+						to derive meaningful insight from it. Demand forecasting was unreliable. Inventory planning
+						was reactive. And commercial decision-making was constrained by the absence of a centralised
+						view of product performance, customer value, and margin drivers.
+					</p>
+					<p>The business needed a solution that could answer:</p>
+					<ul>
+						<li>Which products are driving revenue and profit — and which are eroding margins?</li>
+						<li>Who are the most valuable customers, and which segments are underperforming?</li>
+						<li>Where are the geographic and demographic concentrations of demand?</li>
+					</ul>
 
-    #novamed-slider .dot.active {
-      background-color: #2e7df6;
-    }
+					<hr />
 
-    #novamed-slider .slider-hint {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
+					<h2>2. Data Overview</h2>
+					<ul>
+						<li><strong>Sales Data:</strong> Transaction records, revenue, quantities sold, time series by month and quarter</li>
+						<li><strong>Drug Data:</strong> Product name, pricing, production cost, treatment category</li>
+						<li><strong>Customer Data:</strong> Customer ID, buyer type, age group, gender, country</li>
+					</ul>
+					<p>
+						<em>GDPR Note: Customer data was anonymised at source using ID references only. Demographic
+						and geographic analysis was conducted at aggregate segment level, not individual customer
+						level. All analysis complies with GDPR data minimisation principles.</em>
+					</p>
 
-    @media (prefers-reduced-motion: reduce) {
-      #novamed-slider .slides { transition: none; }
-    }
-  </style>
-</head>
+					<hr />
 
-<body class="is-preload">
+					<h2>3. Data Cleaning &amp; Preparation</h2>
+					<h3>What Was Removed</h3>
+					<ul>
+						<li>Duplicate transaction records identified through Sales ID matching</li>
+						<li>Records with missing product cost data that could not be used in margin calculations</li>
+					</ul>
+					<h3>What Was Transformed</h3>
+					<ul>
+						<li>Sales and cost data modelled into relational tables with defined Power BI relationships</li>
+						<li>Date table created to enable consistent time intelligence across all measures</li>
+						<li>Customer demographics recoded into clean segments for aggregation</li>
+					</ul>
+					<h3>New Calculated Fields (DAX Measures)</h3>
+					<ul>
+						<li><strong>Total Revenue:</strong> SUM of all transaction values</li>
+						<li><strong>Cost of Goods Sold (COGS):</strong> SUM of production costs across sold units</li>
+						<li><strong>Gross Profit:</strong> Revenue − COGS</li>
+						<li><strong>Profit Margin (%):</strong> Gross Profit ÷ Revenue × 100</li>
+						<li><strong>Top N / Bottom N Rankings:</strong> Dynamic DAX ranking logic for products and customers</li>
+					</ul>
 
-  <div id="wrapper" class="fade-in">
+					<hr />
 
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-    </header>
+					<h2>4. Data Analysis</h2>
+					<h3>Key KPIs Tracked</h3>
+					<ul>
+						<li>Total Revenue</li>
+						<li>Total Profit and Profit Margin (%)</li>
+						<li>Cost of Goods Sold (COGS)</li>
+						<li>Quantity Sold</li>
+					</ul>
+					<h3>Key Trends &amp; Patterns</h3>
+					<ul>
+						<li>Month-over-month analysis reveals consistent revenue growth trends punctuated by seasonal fluctuations — patterns that had not previously been documented.</li>
+						<li>A small number of products account for the majority of profit, while several low-margin drugs generate revenue without meaningful commercial contribution.</li>
+						<li>A defined group of high-value customers accounts for a disproportionate share of total revenue — a classic concentration risk warranting dedicated account management.</li>
+						<li>Revenue concentration is visible in specific buyer types and countries, with clear underrepresented segments representing expansion opportunities.</li>
+					</ul>
 
-    <!-- Nav (optional but nice) -->
-    <nav id="nav">
-      <ul class="links">
-        <li><a href="index.html">Portfolio</a></li>
-        <li><a href="powerbiprojects.html">Projects</a></li>
-        <li class="active"><a href="novamed.html">NovaMed Case Study</a></li>
-      </ul>
-    </nav>
+					<hr />
 
-    <!-- Main -->
-    <div id="main">
+					<h2>Insights</h2>
+					<ul>
+						<li><strong>Product concentration is both a strength and a risk.</strong> Top-performing drugs drive the majority of profit efficiently — but dependence on a small portfolio creates vulnerability if demand shifts or supply is disrupted.</li>
+						<li><strong>Low-margin products are not neutral.</strong> Products generating revenue at thin or negative margins consume operational capacity that could be redirected to higher-performing lines.</li>
+						<li><strong>High-value customer concentration is a retention risk.</strong> If a small number of accounts represent a large share of revenue, losing one or two could have disproportionate financial impact.</li>
+						<li><strong>Demographic and geographic gaps represent growth opportunities.</strong> Underrepresented buyer types and geographies are not absence of demand — they are markets that have not yet been effectively reached.</li>
+					</ul>
 
-      <!-- ✅ YOUR EXACT ARTICLE STARTS HERE (UNCHANGED) -->
-      <article class="post">
-        <header class="major">
-          <span class="date">Performance Case Study</span>
-          <h1>Sales Performance & Customer Insights Analytics</h1>
-          <p>
-            <strong>Client:</strong> NovaMed Solutions &nbsp;|&nbsp;
-            <strong>Industry:</strong> Pharmaceutical Distribution &nbsp;|&nbsp;
-            <strong>Tool:</strong> Power BI
-          </p>
-           <p>
-    An end-to-end Power BI solution designed to improve visibility into sales performance,
-    profitability, product demand, and customer behaviour.
-  </p>
-        </header>
+					<hr />
 
-        <!-- AUTO SLIDER (2 images) -->
-        <div class="slider" id="novamed-slider">
-          <div class="slides">
-            <div class="slide">
-              <img src="images/novamed_dashboard.png" alt="NovaMed Sales Dashboard" />
-            </div>
-            <div class="slide">
-              <img src="images/novamed_customer_analysis.png" alt="NovaMed Customer Analysis Dashboard" />
-            </div>
-          </div>
+					<h2>5. Recommendations</h2>
+					<ul>
+						<li>Conduct a product portfolio review to identify and phase out consistently low-margin drugs, reallocating operational capacity to high-performing products.</li>
+						<li>Implement a key account management programme for the top-tier customer segment, with dedicated relationship managers and proactive engagement strategies.</li>
+						<li>Use seasonal demand patterns to build a rolling 12-month inventory plan, reducing both stockout risk and overstock carrying costs.</li>
+						<li>Develop targeted outreach strategies for underrepresented geographic and demographic segments, informed by the characteristics of existing high-value customers.</li>
+					</ul>
 
-          <div class="dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-          </div>
+					<hr />
 
-          <p class="slider-hint">Tip: Swipe/trackpad left-right or click the dots to view the next dashboard.</p>
-        </div>
+					<h2>6. Limitations</h2>
+					<ul>
+						<li>The analysis is based on historical transactional data — external factors such as regulatory changes, competitor activity, or supply chain disruptions are not captured.</li>
+						<li>Customer data is limited to demographics and transaction history; behavioural data such as purchase frequency or brand loyalty is not available.</li>
+						<li>Production cost data is assumed to be stable across the period; real-world cost volatility would affect margin calculations.</li>
+						<li>Top N / Bottom N analysis is relative — rankings will shift as the product and customer portfolio changes over time.</li>
+					</ul>
 
-        <hr />
-<h2>Business Problem</h2>
-<p>
-NovaMed Solutions faced challenges related to demand forecasting, inventory planning,
-and limited visibility into product and customer performance.
-Although large volumes of sales data were available, stakeholders lacked
-a centralised analytics platform to support strategic decision-making.
-</p>
+					<hr />
 
-<hr />
+					<h2>Business Impact</h2>
+					<p>
+						For NovaMed's commercial and strategic teams, the Power BI dashboards replaced guesswork
+						with evidence. Product decisions can now be grounded in margin data. Customer relationships
+						can be managed with an understanding of relative value. Inventory planning can be aligned
+						with seasonal demand rather than reactive to it. These capabilities represent a meaningful
+						step change in how the business uses data to drive performance.
+					</p>
 
-<h2>Project Objective</h2>
-<ul>
-  <li>Monitor sales, profit, and margin performance</li>
-  <li>Identify top- and underperforming drugs and customers</li>
-  <li>Understand customer demographics and purchasing patterns</li>
-  <li>Enable data-driven sales and inventory optimisation</li>
-</ul>
+					<hr />
 
-<hr />
+					<h2>Skills Demonstrated</h2>
+					<p>Power BI &bull; Data Modelling &bull; DAX &bull; KPI Design &bull; Ranking Logic &bull; Customer Analytics &bull; Data Storytelling</p>
 
-<h2>Data Overview</h2>
-<ul>
-  <li><strong>Sales Data:</strong> transactions, revenue, quantities, time series</li>
-  <li><strong>Drug Data:</strong> pricing, production cost, treatment categories</li>
-  <li><strong>Customer Data:</strong> demographics, buyer type, geography</li>
-</ul>
+					<ul class="actions special">
+						<li><a href="powerbiprojects.html" class="button">Back to Projects</a></li>
+						<li><a href="index.html" class="button">Home</a></li>
+						<li><a href="Downloads/novamed_sales_performance_customer_insights.zip" class="button primary">Download Project Files</a></li>
+					</ul>
 
-<hr />
+				</article>
+			</div>
 
-<h2>Methodology & Tools</h2>
-<ul>
-  <li>Data cleaning and modelling using Power BI relationships</li>
-  <li>DAX measures for Revenue, Profit, COGS, Margin, Rankings</li>
-  <li>Dynamic Top/Bottom N analysis</li>
-  <li>Interactive visuals with slicers and drill-down</li>
-</ul>
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt">
+						<h3>About</h3>
+						<p>Data Analyst | Power BI | Tableau | Excel | PostgreSQL</p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:Muyiwa931@gmail.com">Muyiwa931@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/oluwaseun-muyiwa-062037272/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/moschinez" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
 
-<hr />
+			<div id="copyright">
+				<ul>
+					<li>&copy; OLUWASEUN MUYIWA</li>
+					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
 
-<h2>Key KPIs</h2>
-<ul>
-  <li>Total Revenue</li>
-  <li>Total Profit & Profit Margin</li>
-  <li>Cost of Goods Sold (COGS)</li>
-  <li>Quantity Sold</li>
-</ul>
+		</div>
 
-<hr />
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-<h2>Dashboard Insights</h2>
-
-<h3>Sales & Profitability</h3>
-<p>
-KPIs provide a real-time snapshot of business performance, while
-month-over-month analysis reveals growth trends and seasonal fluctuations.
-</p>
-
-<h3>Product Performance</h3>
-<p>
-Dynamic Top & Bottom analysis highlights drugs that drive the majority of revenue
-and those that negatively impact margins.
-</p>
-
-<h3>Customer Contribution</h3>
-<p>
-Customer ranking identifies high-value accounts and underperforming segments,
-supporting targeted engagement and contract optimisation.
-</p>
-
-<h3>Customer Demographics & Geography</h3>
-<p>
-Demographic and geographic analysis reveals revenue concentration by buyer type,
-age group, gender, and country — informing market expansion strategies.
-</p>
-
-<hr />
-
-<h2>Business Impact</h2>
-<ul>
-  <li>Improved visibility into sales and profitability drivers</li>
-  <li>Better identification of high-value products and customers</li>
-  <li>Support for data-driven inventory and pricing decisions</li>
-  <li>Actionable insights for commercial and strategic teams</li>
-</ul>
-
-<hr />
-
-<h2>Skills Demonstrated</h2>
-<p>
-Power BI • Data Modelling • DAX • KPI Design • Ranking Logic •
-Customer Analytics • Data Storytelling
-</p>
-
-<ul class="actions special">
-  <li><a href="powerbiprojects.html" class="button">Back to Projects</a></li>
-  <li><a href="index.html" class="button">Home</a></li>
-  <li>
-    <a href="Downloads/novamed_sales_performance_customer_insights.zip"
-       class="button primary" download>
-      Download Project Files
-    </a>
-  </li>
-</ul>
-
-</article>
-</div>
-
-<div id="copyright">
-  <ul>
-    <li>&copy; Oluwaseun Muyiwa</li>
-    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-  </ul>
-</div>
-
-  </div>
-
-  <!-- Scripts (theme) -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <!-- Slider JS -->
-  <script>
-    window.addEventListener("load", () => {
-      const slider = document.getElementById("novamed-slider");
-      if (!slider) return;
-
-      const slides = slider.querySelector(".slides");
-      const dots = slider.querySelectorAll(".dot");
-      const totalSlides = dots.length;
-
-      let index = 0;
-      let startX = 0;
-      let isDragging = false;
-
-      function updateSlider() {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach(d => d.classList.remove("active"));
-        dots[index].classList.add("active");
-      }
-
-      // Auto slide
-      let autoSlide = setInterval(() => {
-        index = (index + 1) % totalSlides;
-        updateSlider();
-      }, 4500);
-
-      function resetAutoSlide() {
-        clearInterval(autoSlide);
-        autoSlide = setInterval(() => {
-          index = (index + 1) % totalSlides;
-          updateSlider();
-        }, 4500);
-      }
-
-      // Click dots
-      dots.forEach(dot => {
-        dot.addEventListener("click", () => {
-          index = parseInt(dot.dataset.index, 10);
-          updateSlider();
-          resetAutoSlide();
-        });
-      });
-
-      // Touch swipe
-      slides.addEventListener("touchstart", e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      });
-
-      slides.addEventListener("touchend", e => {
-        if (!isDragging) return;
-        const endX = e.changedTouches[0].clientX;
-        handleSwipe(endX);
-      });
-
-      // Mouse drag
-      slides.addEventListener("mousedown", e => {
-        startX = e.clientX;
-        isDragging = true;
-      });
-
-      slides.addEventListener("mouseup", e => {
-        if (!isDragging) return;
-        const endX = e.clientX;
-        handleSwipe(endX);
-      });
-
-      function handleSwipe(endX) {
-        const diff = startX - endX;
-        if (diff > 50) index = (index + 1) % totalSlides;
-        else if (diff < -50) index = (index - 1 + totalSlides) % totalSlides;
-        updateSlider();
-        resetAutoSlide();
-        isDragging = false;
-      }
-    });
-  </script>
-
-</body>
+	</body>
 </html>
