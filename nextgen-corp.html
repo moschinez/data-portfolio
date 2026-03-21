@@ -1,190 +1,215 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title>NextGen Corp | HR Analytics Case Study</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<head>
+		<title>NextGen Corp | HR Analytics Case Study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
+		<div id="wrapper">
 
-<body class="is-preload">
+			<header id="header">
+				<a href="index.html" class="logo">Oluwaseun Muyiwa</a>
+			</header>
 
-  <div id="wrapper" class="fade-in">
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="sqlprojects.html">Projects</a></li>
+					<li class="active"><a href="nextgen-corp.html">NextGen (SQL)</a></li>
+				</ul>
+			</nav>
 
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html" class="logo">Oluwaseun Muyiwa</a>
-    </header>
+			<div id="main">
+				<article class="post featured">
+					<header class="major">
+						<span class="date">HR Analytics Case Study</span>
+						<h1>HR Analytics &amp; Workforce Insights</h1>
+						<p>
+							<strong>Client:</strong> NextGen Corp &nbsp;|&nbsp;
+							<strong>Industry:</strong> Technology (Software &amp; Hardware) &nbsp;|&nbsp;
+							<strong>Tools:</strong> PostgreSQL, SQL
+						</p>
+						<p>
+							A SQL-driven HR analytics project uncovering employee retention risks, performance gaps,
+							and compensation inconsistencies to support workforce planning at a rapidly scaling
+							technology company.
+						</p>
+					</header>
 
-    <!-- Nav -->
-    <nav id="nav">
-      <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sqlprojects.html">Projects</a></li>
-        <li class="active"><a href="nextgen-corp.html">NextGen (SQL)</a></li>
-      </ul>
-    </nav>
+					<hr />
 
-    <!-- Main -->
-    <div id="main">
+					<h2>1. Business Problem</h2>
+					<p>
+						NextGen Corp was scaling fast — but rapid growth had created blind spots in how the
+						business managed its people. Turnover was happening, but HR could not pinpoint which
+						departments were most at risk or why employees were leaving. Performance varied across
+						teams, but without data-driven segmentation, interventions were broad and imprecise.
+						Compensation had evolved organically over time, creating inconsistencies that were
+						beginning to affect morale — without anyone fully understanding the extent of the problem.
+					</p>
+					<p>The analysis was designed to answer four strategic HR questions:</p>
+					<ul>
+						<li>Where are retention risks most concentrated, and what is driving them?</li>
+						<li>Which departments have the greatest performance gaps?</li>
+						<li>Are compensation levels aligned with performance across departments?</li>
+						<li>What HR interventions would have the greatest workforce impact?</li>
+					</ul>
 
-      <article class="post">
-        <header class="major">
-          <span class="date">HR Analytics Case Study</span>
-          <h1>HR Analytics & Workforce Insights</h1>
-          <p>
-            <strong>Client:</strong> NextGen Corp &nbsp;|&nbsp;
-            <strong>Industry:</strong> Technology (Software & Hardware) &nbsp;|&nbsp;
-            <strong>Tools:</strong> PostgreSQL, SQL
-          </p>
-          <p>
-            A SQL-driven HR analytics project designed to uncover insights into
-            employee retention, performance distribution, attendance behaviour,
-            and compensation fairness to support workforce planning.
-          </p>
-        </header>
+					<hr />
 
-        <hr />
+					<h2>2. Data Overview</h2>
+					<p>Analysis was conducted on a relational HR database restored into PostgreSQL, comprising six interconnected tables:</p>
+					<ul>
+						<li><strong>Employees:</strong> Profile, hire date, department, salary, performance score, attendance rate</li>
+						<li><strong>Departments:</strong> Structure, classifications, and reporting lines</li>
+						<li><strong>Performance:</strong> Historical performance scores enabling trend analysis</li>
+						<li><strong>Attendance:</strong> Presence and absence records by employee and period</li>
+						<li><strong>Turnover:</strong> Employee exit records and reasons for leaving</li>
+						<li><strong>Salaries:</strong> Salary history and adjustments over time</li>
+					</ul>
+					<p>
+						<em>GDPR Note: All employee data was handled with strict confidentiality. Outputs were
+						produced at department and role level — no individual employee profiles were included in
+						reports. Salary and performance data was accessed under the assumption of internal HR use
+						only, consistent with legitimate interest provisions under GDPR.</em>
+					</p>
 
-        <h2>Business Context</h2>
-        <p>
-          NextGen Corp is a rapidly scaling technology company operating across
-          software and hardware divisions. As the workforce expanded, HR leadership
-          faced challenges maintaining employee retention, consistent performance,
-          and fair compensation practices across departments.
-        </p>
-        <p>
-          A centralized, data-driven HR analytics solution was required to identify
-          workforce risks, performance gaps, and compensation inconsistencies.
-        </p>
+					<hr />
 
-        <hr />
+					<h2>3. Data Cleaning &amp; Preparation</h2>
+					<h3>What Was Removed</h3>
+					<ul>
+						<li>Duplicate employee records identified through Employee ID matching across tables</li>
+						<li>Incomplete turnover records where exit reason was not recorded</li>
+					</ul>
+					<h3>What Was Transformed</h3>
+					<ul>
+						<li>Hire dates converted to calculate employee tenure in years</li>
+						<li>Performance scores segmented into three tiers: High (≥5.0), Mid (3.5–4.9), Low (&lt;3.5)</li>
+						<li>Salary data joined with performance data at department level for compensation alignment analysis</li>
+					</ul>
+					<h3>New Calculated Fields Created</h3>
+					<ul>
+						<li><strong>Turnover Rate:</strong> Exits ÷ average headcount per department over the analysis period</li>
+						<li><strong>Average Tenure:</strong> Mean employment duration in years by department</li>
+						<li><strong>Salary-Performance Index:</strong> Average salary relative to average performance score by department, used to identify compensation misalignment</li>
+					</ul>
 
-        <h2>Project Objectives</h2>
-        <ul>
-          <li>Analyse employee retention and turnover trends</li>
-          <li>Evaluate performance consistency across departments</li>
-          <li>Assess salary distribution and fairness relative to performance</li>
-          <li>Provide actionable insights to support HR strategy and workforce planning</li>
-        </ul>
+					<hr />
 
-        <hr />
+					<h2>4. Data Analysis</h2>
+					<h3>Key KPIs Tracked</h3>
+					<ul>
+						<li>Turnover Rate by Department</li>
+						<li>Average Employee Tenure</li>
+						<li>Performance Score Distribution (High / Mid / Low)</li>
+						<li>Average Salary by Role and Department</li>
+					</ul>
+					<h3>Key Trends &amp; Patterns</h3>
+					<ul>
+						<li>Turnover is not evenly distributed — specific departments show disproportionately high exit rates, suggesting company-wide retention initiatives may be misallocating resources.</li>
+						<li>High performers (score ≥5.0) exist across all departments, but their distribution is uneven — some teams concentrate high performers while others are dominated by low scorers.</li>
+						<li>Compensation analysis reveals departments where average salary is above benchmark relative to performance, and others where high performers are paid below the departmental average.</li>
+						<li>Attendance patterns correlate with performance tier — employees in the low performance segment show higher absence rates, a potential early warning indicator for future turnover.</li>
+					</ul>
 
-        <h2>Data Overview</h2>
-        <p>
-          Analysis was conducted using a relational database restored into PostgreSQL,
-          consisting of the following tables:
-        </p>
-        <ul>
-          <li><strong>Employees:</strong> profile, hire date, department, salary, performance score, attendance rate</li>
-          <li><strong>Departments:</strong> department structure and classifications</li>
-          <li><strong>Performance:</strong> historical performance scores for trend analysis</li>
-          <li><strong>Attendance:</strong> presence and absence records</li>
-          <li><strong>Turnover:</strong> employee exits and reasons for leaving</li>
-          <li><strong>Salaries:</strong> salary history and adjustments over time</li>
-        </ul>
+					<hr />
 
-        <hr />
+					<h2>Insights</h2>
+					<ul>
+						<li><strong>Retention risk is department-specific.</strong> The concentration of high turnover in particular departments points to local management, team culture, or workload issues — targeted interventions will be more effective than broad policy changes.</li>
+						<li><strong>Underpaid high performers are a flight risk.</strong> Employees delivering strong results but earning below the departmental average have both the ability and the motivation to seek better-compensated roles elsewhere.</li>
+						<li><strong>Low performance combined with high absence is a predictive signal.</strong> This segment represents both a current productivity concern and a near-term turnover risk — early intervention is more cost-effective than managing exits reactively.</li>
+						<li><strong>Compensation inconsistency is not always intentional, but it is always costly.</strong> Where salary and performance are misaligned, the business is either overpaying for underperformance or creating retention risk by underpaying contributors.</li>
+					</ul>
 
-        <h2>Analytical Approach</h2>
-        <ul>
-          <li>Restored and structured the HR dataset within PostgreSQL</li>
-          <li>Performed relational joins across employee, department, performance, and salary tables</li>
-          <li>Built SQL queries to calculate tenure, turnover rates, performance segmentation, and salary benchmarks</li>
-          <li>Segmented insights by department to identify high-risk and high-performing teams</li>
-        </ul>
+					<hr />
 
-        <hr />
+					<h2>5. Recommendations</h2>
+					<ul>
+						<li>Conduct targeted retention reviews in the highest-turnover departments — specifically investigating exit reasons, management practices, and workload distribution.</li>
+						<li>Initiate a compensation equity review for high-performing employees earning below departmental average. Proactive salary adjustments are significantly less costly than recruiting and onboarding replacements.</li>
+						<li>Implement structured performance improvement plans for low-performing, high-absence employees — combining clear expectations with access to coaching or additional support.</li>
+						<li>Use performance and attendance data to build an early warning dashboard that flags at-risk employees before they reach the turnover stage.</li>
+					</ul>
 
-        <h2>Key Analysis Areas</h2>
+					<hr />
 
-        <h3>Employee Retention & Turnover</h3>
-        <ul>
-          <li>Calculated turnover rates by department</li>
-          <li>Identified top long-tenured employees</li>
-          <li>Flagged employees at retention risk using performance and attendance indicators</li>
-          <li>Analysed primary reasons for employee exits</li>
-        </ul>
+					<h2>6. Limitations</h2>
+					<ul>
+						<li>The dataset reflects a point-in-time snapshot — longitudinal analysis over multiple years would strengthen trend detection and predictive modelling.</li>
+						<li>Exit reason data was incomplete, limiting the depth of turnover cause analysis. A structured exit interview process would significantly improve data quality for future work.</li>
+						<li>Compensation analysis does not account for total remuneration (benefits, bonuses, equity) — base salary alone is an incomplete proxy for compensation competitiveness.</li>
+						<li>Performance scores may carry subjective bias from manager assessment. Calibration across departments would improve the reliability of cross-team comparisons.</li>
+					</ul>
 
-        <h3>Performance Analysis</h3>
-        <ul>
-          <li>Segmented employees into high performers (5.0) and low performers (&lt;3.5)</li>
-          <li>Computed average performance score by department</li>
-          <li>Identified departments with performance variability requiring intervention</li>
-        </ul>
+					<hr />
 
-        <h3>Compensation & Salary Analysis</h3>
-        <ul>
-          <li>Calculated total salary expenditure</li>
-          <li>Computed average salary by job role</li>
-          <li>Identified high-earning employees (&gt;$80,000)</li>
-          <li>Assessed salary alignment with performance across departments</li>
-        </ul>
+					<h2>Business Impact</h2>
+					<p>
+						NextGen Corp now has a clear workforce risk map built on evidence rather than assumption.
+						Retention risks are visible by department and can be addressed before they result in
+						costly exits. Performance gaps are quantified and linked to specific teams, enabling
+						precise rather than broad interventions. Compensation misalignments have been identified
+						and can be corrected in a way that protects both fairness and retention. For a company
+						scaling rapidly, the ability to make data-driven people decisions is not a nice-to-have
+						— it is a competitive necessity.
+					</p>
 
-        <hr />
+					<hr />
 
-        <h2>Key KPIs Tracked</h2>
-        <ul>
-          <li>Turnover Rate by Department</li>
-          <li>Average Employee Tenure</li>
-          <li>Performance Score Distribution</li>
-          <li>Average Salary by Role and Department</li>
-        </ul>
+					<h2>Skills Demonstrated</h2>
+					<p>PostgreSQL &bull; SQL &bull; Relational Joins &bull; HR Analytics &bull; Turnover Metrics &bull; Performance Segmentation &bull; Compensation Analysis &bull; Insight Reporting</p>
 
-        <hr />
+					<ul class="actions special">
+						<li><a href="sqlprojects.html" class="button">Back to Projects</a></li>
+						<li><a href="index.html" class="button">Home</a></li>
+						<li><a href="Downloads/nextgen_sql_project_files.zip" class="button primary">Download Project Files</a></li>
+					</ul>
 
-        <h2>Business Impact</h2>
-        <ul>
-          <li>Identified departments with elevated retention risk</li>
-          <li>Highlighted performance gaps requiring coaching or process improvements</li>
-          <li>Detected salary inconsistencies impacting fairness and satisfaction</li>
-          <li>Enabled data-driven HR decisions around retention and compensation strategy</li>
-        </ul>
+				</article>
+			</div>
 
-        <hr />
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt">
+						<h3>About</h3>
+						<p>Data Analyst | Power BI | Tableau | Excel | PostgreSQL</p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:Muyiwa931@gmail.com">Muyiwa931@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/oluwaseun-muyiwa-062037272/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/moschinez" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
 
-        <h2>Skills Demonstrated</h2>
-        <p>
-          PostgreSQL • SQL • Relational Joins • HR Analytics • Turnover Metrics •
-          Performance Segmentation • Compensation Analysis • Insight Reporting
-        </p>
+			<div id="copyright">
+				<ul>
+					<li>&copy; OLUWASEUN MUYIWA</li>
+					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
 
-        <ul class="actions special">
-          <li><a href="sqlprojects.html" class="button">Back to Projects</a></li>
-          <li><a href="index.html" class="button">Home</a></li>
-          <li>
-            <a href="Downloads/nextgen_sql_project_files.zip"
-               class="button primary"
-               download>
-              Download Project Files
-            </a>
-          </li>
-        </ul>
+		</div>
 
-      </article>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-    </div>
-
-    <!-- Footer -->
-    <div id="copyright">
-      <ul>
-        <li>&copy; Oluwaseun Muyiwa</li>
-        <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-</body>
+	</body>
 </html>
